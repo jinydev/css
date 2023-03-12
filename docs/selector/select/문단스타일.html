@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="문단-스타일">문단 스타일</h1>
+
+<h2 id="들여쓰기">들여쓰기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">text-indent</code></p>
+
+<h2 id="줄간격">줄간격</h2>
+<p><code class="language-plaintext highlighter-rouge">line-height</code></p>
+
+<p>값은 크게 3개로 지정을 할 수 있습니다.</p>
+<ul>
+  <li>숫자</li>
+  <li>크기</li>
+  <li>백분율</li>
+</ul>
+
+<h2 id="목록-스타일">목록 스타일</h2>
+<p><code class="language-plaintext highlighter-rouge">ul</code>, <code class="language-plaintext highlighter-rouge">li</code> 테그를 이용하여 표현되는 목록의 경우 블릿이 같이 출력이 됩니다.</p>
+
+<p>css 를 이용하여 블릿의 모양을 변경할 수 있습니다.</p>
+
+<ul>
+  <li>사각형</li>
+  <li>원형</li>
+</ul>
+
+<h3 id="이미지로-표시">이미지로 표시</h3>
+<p>list-style-image</p>
+
+<h3 id="블릿-숨기기">블릿 숨기기</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">ul</span> <span class="p">{</span>
+    <span class="nl">list-style-type</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="숫자값-변경">숫자값 변경</h3>
+<p>숫자값을 표현하기 위해서는 순서가 있는 목록이어야 합니다. 숫자 목록은 <code class="language-plaintext highlighter-rouge">ol</code> 테그로 작성을 합니다.</p>
+
+<h2 id="묽어서-표현하기">묽어서 표현하기</h2>
+
+<p><code class="language-plaintext highlighter-rouge">list-style</code>을 이용하여 묶어서 표현이 가능합니다.</p>
+
+    </div>    
+</body>
+</html>

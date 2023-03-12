@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <blockquote>
+  <p>CSS3</p>
+  <h1 id="백그라운드-사이즈-지정">백그라운드 사이즈 지정</h1>
+  <p>CSS3에서는 백그라운의 사이즈를 지정할 수 있습니다.</p>
+</blockquote>
+
+<p>기존 css2에서는 배경 이미지가 삽입이 될때, 배경크기를 맞추기 위해서는 별도의 이미지 가공작업이 필요 했습니다.</p>
+
+<p>하지만, CSS3에서는 배경이미지의 사이즈를 변경하여 별도의 작업을 하지 않고도 적용을 할 수 있게 됩니다.</p>
+
+<h2 id="background-size">background-size</h2>
+<p>이미지의 사이즈를 직접 지정합니다.
+<code class="language-plaintext highlighter-rouge">px</code> 또는 <code class="language-plaintext highlighter-rouge">%</code>로 입력이 가능합니다.</p>
+
+<h3 id="가로-사이즈-기준으로-변경하기">가로 사이즈 기준으로 변경하기</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-size</span><span class="o">:</span> <span class="err">100</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>한개의 값을 지정할때는 가로 기준으로 변경합니다.
+높이는 이미지 비율에 따라 적용합니다.</p>
+
+<h3 id="가로-세로-사이즈-지정하기">가로, 세로 사이즈 지정하기</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-size</span><span class="o">:</span> <span class="err">100</span><span class="nt">px</span> <span class="err">200</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="세로-사이즈-지정하기">세로 사이즈 지정하기</h3>
+<p>가로 사이즈를 auto로 지정하고, 세로값을 지정하면 됩니다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-size</span><span class="o">:</span> <span class="nt">auto</span> <span class="err">200</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="cover">cover</h3>
+<p>이미지의 비율을 <code class="language-plaintext highlighter-rouge">유지</code>하면서 요소에 꽉차게 배치를 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-size</span><span class="o">:</span> <span class="nt">cover</span><span class="o">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>요소에 이미지를 꽉차게 적용하고자 할때에는 가로, 세로를 모두 100%로 입력합니다.</p>
+</blockquote>
+
+<p><br /></p>
+
+<h3 id="contain">contain</h3>
+<p>이미지 비율을 유지하면서, 한쪽 기준으로 전체가 보이도록 처리를 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-size</span><span class="o">:</span> <span class="nt">contain</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>가로가 긴경우에는 가로 기준으로 배치를 합니다. 높이가 큰경우에는 높이를 기준으로 배치를 합니다.</p>
+
+<p>cover와 다르게 비율이 맞지 않는 부분은 <code class="language-plaintext highlighter-rouge">빈영역</code>으로 표시가 됩니다.</p>
+
+<h2 id="주의">주의</h2>
+<p>background-size의 속성은 기존 background 속성에 적용을 할 수 없습니다.
+별도로 분리된 속성으로 처리를 해야 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="nt">img</span><span class="nc">.png</span><span class="o">)</span> <span class="nt">no-repeat</span><span class="o">;</span>
+<span class="nt">background-size</span><span class="o">:</span> <span class="nt">contain</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="배경이-여러개일-경우">배경이 여러개일 경우</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background</span><span class="o">:</span> <span class="nt">이미지1</span><span class="o">,</span> <span class="nt">이미지2</span><span class="o">,</span> <span class="nt">이미지3</span><span class="o">;</span>
+<span class="nt">background-size</span><span class="o">:</span> <span class="nt">설정1</span><span class="o">,</span> <span class="nt">설정2</span><span class="o">,</span> <span class="nt">설정3</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>위와 같이 지정을 할 수 있습니다.</p>
+
+
+    </div>    
+</body>
+</html>

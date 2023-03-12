@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <blockquote>
+  <p>CSS3</p>
+  <h2 id="transition">transition</h2>
+  <p>CSS에서 움직이는 표현을 처리하는 기술로 animation과 transition 이 있습니다.</p>
+</blockquote>
+
+<h2 id="동작조건">동작조건</h2>
+<p>transition 을 처리하기 위해서는 특수한 조건이 필요 합니다.</p>
+
+<h2 id="설정위치">설정위치</h2>
+<p>transition 동작 조건의 이전단계에 설정을 해야 합니다.</p>
+
+<h2 id="transition-property">transition-property</h2>
+<p>적용하고자 하는 transition 효과를 제한합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-property</span><span class="o">:</span> <span class="nt">border-radius</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>여러개의 효과를 허용하기 위해서는 <code class="language-plaintext highlighter-rouge">콤마</code>로 구분합니다.</p>
+
+<h2 id="transition-duration">transition-duration</h2>
+<p>효과를 적용하는 시간</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-duration</span><span class="o">:</span> <span class="err">2</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>transition은 시작할때도 적용되지만, 반대 동작에도 적용됩니다.</p>
+
+<h2 id="transition-delay">transition-delay</h2>
+<p>transition 동작을 일정한 시간동안 지연시킨 다음에 시작을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-delay</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">5</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="tansition-timing-function">tansition-timing-function</h2>
+<p>동작하는 효과를 지정할 수 있습니다.</p>
+
+<p>부드러운 동작을 처리할 수 있습니다.</p>
+<ul>
+  <li>ease</li>
+  <li>ease-in</li>
+  <li>ease-out</li>
+</ul>
+
+<h2 id="잛게-표현">잛게 표현</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">background</span> <span class="err">2</span><span class="nt">s</span> <span class="err">05</span><span class="nt">s</span> <span class="nt">ease</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">background</span> <span class="err">2</span><span class="nt">s</span> <span class="err">05</span><span class="nt">s</span> <span class="nt">ease</span><span class="o">,</span> <span class="nt">border-radius</span> <span class="err">3</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="all">all</h2>
+<p>모든 효과를 허용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">all</span> <span class="o">.</span><span class="err">5</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+
+    </div>    
+</body>
+</html>

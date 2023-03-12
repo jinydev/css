@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h2 id="부트스트랩-collapse">부트스트랩 collapse</h2>
+
+<p>collapse 기능은 어떠한 객체를 보이거나 숨김을 처리 합니다.</p>
+
+<p>collapse를 사용하기 위해서는 먼저 <code class="language-plaintext highlighter-rouge">panel-group</code> 클래스를 사용합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"accordion"</span> <span class="na">class=</span><span class="s">"panel-group"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pannel pannel-primary"</span><span class="nt">&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-heading"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">"panel-title"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#panelBody1"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-parent=</span><span class="s">"#accordion"</span><span class="nt">&gt;</span>Asia<span class="nt">&lt;/a&gt;</span>
+            <span class="nt">&lt;/h4&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"panelBody1"</span> <span class="na">class=</span><span class="s">"panel-collapse collapse"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"panel-body"</span><span class="nt">&gt;</span>                <span class="nt">&lt;ul&gt;</span>
+                    <span class="nt">&lt;li&gt;</span>Korea<span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li&gt;</span>China<span class="nt">&lt;/li&gt;</span>
+                    <span class="nt">&lt;li&gt;</span>Japan<span class="nt">&lt;/li&gt;</span>
+                <span class="nt">&lt;/ul&gt;</span>
+            <span class="nt">&lt;/div&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>https://www.youtube.com/watch?v=LxUACFT8QEY&amp;index=38&amp;list=PL6n9fhu94yhXd4xnk-j5FGhHjUv1LsF0V</p>
+
+    </div>    
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="우선순위">우선순위</h1>
+<p>스타일시트는 첫번째 <code class="language-plaintext highlighter-rouge">C</code>는 캐스케이딩(cascading) 입니다. 이는 CSS의 값이 상속의 개념이 존재하며, 또한 그 우선순위도 있다는 것입니다.</p>
+
+<h2 id="스타일은-상속됩니다">스타일은 상속됩니다.</h2>
+<p>웹 문서에서 사용하는 HTML 태그들은 서로 포함 관계를 가지고 있습니다. 즉, 하나의 테그는 다른 테그를 감싸고 있는데, 상위 테그를 부모 요소라고 하고 하위 태그를 자식 요소라고 합니다.</p>
+
+<p>이때, 상위 부모요소에 적용된 CSS 속성값은 자식요소에도 적용되는데, 이를 <code class="language-plaintext highlighter-rouge">상속</code>이라 합니다.</p>
+
+<blockquote>
+  <p>부모 요소로부터 자식 요소로 단계별로 스타일이 적용됩니다. 스타일이 <code class="language-plaintext highlighter-rouge">계단식</code>으로 적용된다른 의미로 <code class="language-plaintext highlighter-rouge">캐스케이딩(cascading)</code>이라는 단어가 붙게 된 것입니다.</p>
+</blockquote>
+
+<h3 id="상속이-되는-것과-안되는것">상속이 되는 것과 안되는것</h3>
+<p>CSS의 속성이 자식요소로 상속되어 적용이 되지만, 적용이 되지 않는 것들도 있습니다.</p>
+
+<p>예를 들어보면,<br />
+텍스트의 글자색은 상속이 되지만, 배경색등은 상속이 되지 않습니다.</p>
+
+<blockquote>
+  <p>왜 모든 속성이 상속되지 않는 것일까?
+중복되는 속성값들은 굳이 모두 상속하여 적용할 필요가 없기 때문입니다.</p>
+</blockquote>
+
+<h3 id="단계별-스타일-적용">단계별 스타일 적용</h3>
+<p>CSS를 작성하다 보면 동일한 요소에 서로 다른 값을 설정할 때도 있습니다.</p>
+
+<ul>
+  <li>
+    <p>마지막 적용값이 최종값<br />
+이런경우에는 제일 마지막에 작성한 규칙이 적용 됩니다.</p>
+  </li>
+  <li>
+    <p>강제로 우선순위 높이기<br />
+스타일 규칙을 작성하면서 <code class="language-plaintext highlighter-rouge">!important</code>를 추가하게 되면, 강제로 우선순위가 높아져서 적용이 됩니다.</p>
+  </li>
+</ul>
+
+
+    </div>    
+</body>
+</html>

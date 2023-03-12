@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="스타일-형식">스타일 형식</h1>
+<p>웹 문서에서 자주 사용하는글꼴이나 색상，텍스트와 이미지를 어떻게 배치할 것인지 등의 규칙을모아놓은 것이 스타일입니다.</p>
+
+<h2 id="css-표현">CSS 표현</h2>
+<hr />
+<p>CSS 는 <code class="language-plaintext highlighter-rouge">선택자</code>와 <code class="language-plaintext highlighter-rouge">속성</code> 및 <code class="language-plaintext highlighter-rouge">값</code>으로 구성됩니다. 작성방법은 다음과 같습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">선택자</span> <span class="p">{</span> <span class="py">속성</span><span class="p">:</span><span class="n">값</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<p>선택자 뒤에는 속성과 값을 <code class="language-plaintext highlighter-rouge">{</code>와 <code class="language-plaintext highlighter-rouge">}</code>로 감싸서 표현을 합니다. 이를 CSS 블럭이라고 말합니다.</p>
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">{}</code>는 코드의 블럭을 표현하는 기호 입니다.</p>
+</blockquote>
+
+<p>속성과 값을 구분할 때에는 사이에 콜론<code class="language-plaintext highlighter-rouge">:</code>을 삽입합니다. 또한, 마지막에는 세미콜론<code class="language-plaintext highlighter-rouge">;</code>이 위치합니다.</p>
+
+<p>다음은 문단 <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code>테그에 글자 속성을 부여하는 예제 입니다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">p</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="선택자">선택자</h2>
+<p>CSS 표현에서 선택자는 html 요소를 가리킵니다. 요소의 선택은 테그명 또는 속성명등을 결합하여 선택이 가능합니다. 
+제일 많이 사용하는 속성명은 클래스 입니다.</p>
+
+<ul>
+  <li>테그</li>
+  <li><code class="language-plaintext highlighter-rouge">.</code> : 클래스 선택</li>
+  <li><code class="language-plaintext highlighter-rouge">#</code> : id 선택</li>
+</ul>
+
+<blockquote>
+  <p>css는 지정한 선택자와 일치하는 모든 HTML 요소를 찾아 style 속성을 부여 합니다.</p>
+</blockquote>
+
+<h2 id="속성과-값">속성과 값</h2>
+<p>선택자 다음에는 대괄호가 있고，그 안에는 속성과속성 값이 옵니다. 
+하나의 속성은 하나의 값만을 가지게 됩니다. 만일 선택된 요소에 여러개의 속성을 부여하고자 할때에는 세미콜론 <code class="language-plaintext highlighter-rouge">;</code>을 통하여
+구분을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h2</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span><span class="m">20px</span><span class="p">;</span> <span class="nl">color</span><span class="p">:</span><span class="no">purple</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>CSS는 공백을 무시합니다.</p>
+</blockquote>
+
+<p>코드의 가독성을 위하여 한줄로 길게 쓰는 것보다는 다음줄에 걸쳐 보기 좋게 작성을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h2</span> <span class="p">{</span>
+    <span class="nl">font-size</span><span class="p">:</span><span class="m">20px</span><span class="p">;</span> 
+    <span class="nl">color</span><span class="p">:</span><span class="no">purple</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="css의-주석">CSS의 주석</h2>
+<p>CSS에서 주석을 표시할 때는 <code class="language-plaintext highlighter-rouge">/*</code>와 <code class="language-plaintext highlighter-rouge">*/</code> 형태로 지정된 블럭을 모두 주석으로 처리 합니다.</p>
+
+<h2 id="다양한-모양의-스타일-적용방식">다양한 모양의 스타일 적용방식</h2>
+<hr />
+<p>스타일은 모두 동일 하지 않습니다. 운영체제, 브라우저 등에 따라서 다르게 스타일이 적용되어 있습니다.</p>
+
+<h3 id="운영체제-스타일">운영체제 스타일</h3>
+<p>테스크탑 운영체제별로 다르게 적용되는 스타일을 말합니다.</p>
+
+<h3 id="브라우저-스타일">브라우저 스타일</h3>
+<p>브라우저마다 적용되는 스타일의 모양이 다르다.</p>
+
+<h3 id="사용자-스타일">사용자 스타일</h3>
+<p>사용자가 브라우저, 운영체제등의 <code class="language-plaintext highlighter-rouge">설정</code>을 직접 변경하여 적용하는 스타일을 말합니다.
+글씨의 크기를 크게 하거나, 색맹, 시각등의 장애를 가지고 있는 사람들이 많이 이용을 합니다.</p>
+
+<h3 id="제작-스타일">제작 스타일</h3>
+<p>사이트를 만드는 사람이 스타일을 변경하는 것을 말합니다.</p>
+
+<p><br /></p>
+
+<h2 id="제작-스타일-1">제작 스타일</h2>
+<hr />
+<p>개발자가 스타일을 변경할 수 있는 방법은 크게 4가지가 있습니다.</p>
+
+<h3 id="인라인-스타일inline-style">인라인 스타일(inline Style)</h3>
+<p>html 요소에 직접 CSS를 지정하는 것을 말합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"color:red"</span><span class="nt">&gt;</span>안녕하세요<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="임베디드-스타일embedded-style">임베디드 스타일(Embedded Style)</h3>
+<p>html 문서의 head 영역에 삽입을 하는 스타일 적용 방식을 말합니다.
+<code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> 테그를 삽입하여 스타일을 지정합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;style&gt;</span>
+            <span class="nt">p</span> <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;p&gt;</span>안녕하세요<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>임베디스 스타일은 현재의 <code class="language-plaintext highlighter-rouge">작업중인 문서</code>에만 적용이 됩니다.</p>
+
+<blockquote>
+  <p>임베디스 스타일은 여러개의 웹문서를 제작할때 일괄적인 수정이 어렵다는 단점이 있습니다.
+유지보수, 운영에 어렵습니다. 페이지의 디자인을 테스트 할때 많이 사용을 합니다.</p>
+</blockquote>
+
+<h3 id="링크드-스타일linked-style">링크드 스타일(Linked Style)</h3>
+<p>별도의 스타일시트 파일(*.css)을 생성하여 링크를 영결하는 것입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"default.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>실무에서 가장 많이 사용하는 스타일 적용방식입니다.
+외부 파일로 정의되어 있기 대문에 다수의 페이지에 일괄 수정하기 용이합니다.</p>
+</blockquote>
+
+<h3 id="삽입-스타일import-style">삽입 스타일(Import style)</h3>
+<p>css 선언안에 추가 css를 적용할때 유용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+    <span class="k">@import</span> <span class="sx">url('default.css')</span><span class="p">;</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="css의-우선순위">CSS의 우선순위</h2>
+<hr />
+<p>CSS는 선택자가 있습니다.</p>
+
+<p>선택자에 따라서 우선적으로 적용되는 점수가 있습니다.</p>
+
+<h3 id="0-전체-선택자-">0. 전체 선택자 <code class="language-plaintext highlighter-rouge">*</code></h3>
+<p>전체 선택자는 모든 요소를 선택합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>전체 선택자를 지정하여 스타일이 적용되면, 모든 요소들의 스타일이 변경을 하게 됩니다.</p>
+
+<h3 id="1-타입-선택자">1. 타입 선택자</h3>
+<p>html의 테그 요소를 선택합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="10-클래스-선택자-praise-클래스-선택자">10. 클래스 선택자, praise 클래스 선택자</h3>
+<p>특정 요소에 이름을 부여합니다. 클래스를 통하여 부여한 이름을 통하여 선택자를 사용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.aa</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"aa"</span><span class="nt">&gt;</span>안녕하세요<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="100-id-선택자">100. id 선택자</h3>
+<p><code class="language-plaintext highlighter-rouge">id</code>를 통하여 부여된 이름을 선택자로 사용을 합니다.
+id로 부여된 이름은 <code class="language-plaintext highlighter-rouge">#</code>기호로 사용을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.bb</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">orange</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="1000-인라인-스타일">1000. 인라인 스타일</h3>
+<p>테그 요소에서 직접 스타일을 지정을 하는 방법입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"color:gray"</span><span class="nt">&gt;</span>안녕하세요<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="절대-최고값-important">절대 최고값, !important</h3>
+<p>위의 모든 우선순위를 무시하고 적용하는 초고 우선순위를 말합니다.
+우선순위를 무시합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">*</code> 보다 우선순위가 높은 div 테그의 스타일이 적용되어야 하나, <code class="language-plaintext highlighter-rouge">!important</code>로 인하여 우선순위가 낮은 <code class="language-plaintext highlighter-rouge">*</code> 선택자가 적용되는 것을 확인할 수 있습니다.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">!important</code>는 세미콜론 안쪽에 넣어 줍니다.</p>
+</blockquote>
+
+<h2 id="css-여백-설정하기">CSS 여백 설정하기</h2>
+<hr />
+<p>css에서 여백을 설정하는 방법은 크게 2가지가 있습니다.
+안쪽 여백은 padding, 바깥쪽 여백은 margin 이라고 합니다.</p>
+
+<h3 id="안쪽-여백-padding">안쪽 여백 Padding</h3>
+<p>여러개의 값이 설정될 때에는 스페이스로 한칸씩 뛰어 주어야 합니다.</p>
+
+<ul>
+  <li>1개: 상하좌우
+모두 동일한 값으로 padding을 선택할때에는 하나의 설정값만을 입력합니다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>2개: 상하/ 좌우
+동일한 값의 위아래와 동일한 값의 좌우를 설정할때는 2개의 설정값을 입력합니다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">30px</span> <span class="m">10px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>첫번째 값은 위/아래를 의미 합니다. 두번째 값은 좌/우를 의미 합니다.</p>
+
+<ul>
+  <li>3개</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">30px</span> <span class="m">10px</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>첫번째 값은 상단,
+두번째 값은 좌/우,
+세번째 값은 하단</p>
+
+<ul>
+  <li>4개
+시계방향으로 설정값이 적용이 됩니다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">20px</span> <span class="m">30px</span> <span class="m">40px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>상단 10px
+오른쪽 20px
+하단 30px
+왼쪽 40px</p>
+
+<h4 id="한방향-설정">한방향 설정</h4>
+
+<p>padding-top
+padding-bottom
+padding-left
+padding-right</p>
+
+<p><br /></p>
+
+<h3 id="마진">마진</h3>
+<p>바깥쪽 여백을 의미합니다.</p>
+
+<ul>
+  <li>
+    <p>1개 : 전체</p>
+  </li>
+  <li>
+    <p>2개 : 상하/좌우</p>
+  </li>
+  <li>
+    <p>3개 : 상 / 좌우 / 하</p>
+  </li>
+  <li>
+    <p>4개 : 위쪽 / 오른쪽 / 하단 / 왼쪽</p>
+  </li>
+</ul>
+
+<h4 id="한방향-설정-1">한방향 설정</h4>
+<p>margin-top
+margin-bottom
+margin-left
+margin-right</p>
+
+<h2 id="margin-0-auto">margin: 0 auto</h2>
+<p><code class="language-plaintext highlighter-rouge">블록요소</code>의 성격을 가지는 요소를 중앙에 배치할때 사용을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="박스모델">박스모델</h2>
+<p>모든 요소들은 사각형의 형태를 가지고 있습니다.</p>
+
+<h3 id="박스의-크기">박스의 크기</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>가로 세로 100px의 박스 크기가 됩니다.</p>
+
+<h3 id="padding-추가">padding 추가</h3>
+<p>박스에서 패딩 설정시 박스의 크기는 padding 설정값 많큼 <code class="language-plaintext highlighter-rouge">크게</code> 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>패딩이 추가돠어 가로 세로 140px 의 크기가 됩니다.</p>
+
+<blockquote>
+  <p>실제 박스의 크기를 동일하게 하기 위해서는 가로사이즈 - 안쪽여백 = 현재 사이즈</p>
+</blockquote>
+
+<h3 id="margin-추가">margin 추가</h3>
+<p>마진은 바깥쪽 여백으로 박스 <code class="language-plaintext highlighter-rouge">사이즈의 크기 변화는 없습니다</code>. 하지만, 마진으로 인하여 박스의 위치가 틀어지게 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">50px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h3 id="선-추가">선 추가</h3>
+<p>박스모델에서 선이 추가 되면, 선의 굵기 많큼 박스의 크기가 커지게 됩니다.</p>
+
+<h2 id="box-sizing">box-sizing</h2>
+<p>박스의 크기를 자동으로 계산해 줍니다.
+css3에서 추가된 기능입니다. ie7 이하에서는 지원하지 않습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">box-sizing</span><span class="nd">:border-box</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="position">position</h2>
+<p>요소의 위치를 이동합니다.</p>
+
+<h3 id="static">static</h3>
+<p>기본값으로 요소의 좌표를 이동할 수 없습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">static</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>객체의 위치를 초기화 할때 사용합니다.</p>
+
+<h3 id="relative">relative</h3>
+<p>요소를 상대적 위치로 이동을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: relative01.html
+relative 속성이 부여되었다고 해서 현재의 위치에 아무런 변화가 없습니다.</p>
+</blockquote>
+
+<h3 id="위치이동">위치이동</h3>
+<p>요소의 위치속성을 relative로 설정한 후에는 좌표의 이동이 같이 해주어야 합니다.
+위치의 이동은 상하좌우 4방향으로 이동을 할 수 있습니다.</p>
+<ul>
+  <li>top</li>
+  <li>left</li>
+  <li>right</li>
+  <li>bottom</li>
+</ul>
+
+<blockquote>
+  <p>예제코드: relative02.html</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">기존의 위치</code>로 부터 이동을 합니다.</p>
+
+<blockquote>
+  <p>위치이동은 상위 요소가 position 속성값이 없는 상태에서는
+적용이 되지 않습니다.</p>
+</blockquote>
+
+<h3 id="absolute">absolute</h3>
+<p>절대위치로 요소를 이동합니다.
+만일, 절대위치를 적요한 요소의 상위요소가 relative가 되면,
+relative 요소를 부모로 하여 기준좌표가 변경이 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: absolute01.html</p>
+</blockquote>
+
+<p>절대좌표가 적용되면, 요소는 레이어와 같이 중간에 뜬 상태가 됩니다.
+따라서 위의 <code class="language-plaintext highlighter-rouge">~</code>과 아래 <code class="language-plaintext highlighter-rouge">~</code>이 같이 붙여져서 표현을 하게 되고.</p>
+
+<p>위치를 이동할 수 있습니다.
+기준점은 <code class="language-plaintext highlighter-rouge">브라우저</code>의 상단 좌측 입니다.</p>
+
+<h3 id="fixed">fixed</h3>
+<p>요소를 브라우저의 특정위치에 고장하는 것을 말합니다.</p>
+
+<p>relative와 absolute는 웹페이지를 기준으로 배치를 합니다.
+반면에 fixed는 모니터의 브라우저 화면을 기준으로 고정배치를 합니다.</p>
+
+<h2 id="상호관계">상호관계</h2>
+<p>relative와 absolute 와의 관계를 실습합니다.</p>
+
+<blockquote>
+  <p>예제코드: position41.html</p>
+</blockquote>
+
+<p>absolute 속성을 이용하여 위츠를 이동해 봅니다.</p>
+<blockquote>
+  <p>예제코드: position42.html</p>
+</blockquote>
+
+<p>브라우저의 기준으로 파란색 박스가 이동한 것을 볼 수 있습니다.</p>
+
+<p>상위 div 요소에 relative 속성을 부여합니다.</p>
+<blockquote>
+  <p>예제코드: position43.html</p>
+</blockquote>
+
+<p>바디 요소의 설정많큼 박스가 움직이게 됩니다.
+상위 박스가 relative가 되면, 하위 absolute의 기준점은 상위 박스가 됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="z-index">z-index</h2>
+<p>요소가 겹쳐져 있을때 화면에 보이는 순서를 변경할 수 있습니다.</p>
+
+<p>예를 들어 여러개의 요소들이 절대값으로 인하여 동일한 위치에 있을경우
+마지막에 있는 요소만 보이게 됩니다.</p>
+
+<p>이를 순서를 변경하기 위해서는 z-index 옵션을 사용해 주어야 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">z-index</span><span class="nd">:숫자</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p><br /></p>
+
+<h2 id="위치-실습">위치 실습</h2>
+<hr />
+
+<h3 id="정-가운데-박스-그리기">정 가운데 박스 그리기</h3>
+
+<ul>
+  <li>margin을 이용하여 위치 보정하기</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">margin</span><span class="o">:</span> <span class="nt">-px</span> <span class="err">0</span> <span class="err">0</span> <span class="nt">-px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="margin-으로-박스-이동하기">margin 으로 박스 이동하기</h3>
+<p>margin은 바깥쪽 속성으로 값 지정시 요소의 위치를 이동하게 됩니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">+</code>값은 오른쪽으로 이동을 하며, <code class="language-plaintext highlighter-rouge">-</code>는 왼쪽으로 이동을 하게 됩니다.</p>
+
+<p>만일, 요소가 다른 요소의 위치에 영향을 주는 경우에는.
+마진 변경으로 같이 이동을 하게 됩니다.</p>
+
+<h3 id="relative-이동">relative 이동</h3>
+<p>maring은 다른 요소에 영향을 주면서 위치를 이동합니다.
+반면에 relative 속성을 이용하여 이동을 하게 되면, 다른 요소에는 영향을 주기 안고 해당 요소만을 이동을 할 수 있습니다.</p>
+
+<h2 id="float">float</h2>
+<hr />
+<p><code class="language-plaintext highlighter-rouge">블럭</code>의 속성을 가지는 요소들을 배치합니다.
+float은 요소를 정렬하기 위해서 사용을 합니다.
+float의 요소값은 다음과 같이 3가지가 있습니다.</p>
+
+<ul>
+  <li>left</li>
+  <li>right</li>
+  <li>none</li>
+</ul>
+
+<blockquote>
+  <p>예제코드 : float01.html</p>
+</blockquote>
+
+<p>위의 예제코드와 같이 ul/li 요소는 한줄단위로 출력됩니다.
+li는 블럭 요소를 가지고 있기 대문 입니다.</p>
+
+<h3 id="left">left</h3>
+
+<p>float 속성을 이용하여 한줄로 표시를 합니다.</p>
+
+<blockquote>
+  <p>예제코드 : float02.html
+요소들이 왼쪽을 기준으로 순차적으로 배치됩니다.</p>
+</blockquote>
+
+<h3 id="right">right</h3>
+<p>right는 오른쪽 부터 요소를 배치하게 됩니다.
+첫번째 요소가 가장 오른쪽에 배치를 하기 때문에, 순서가 역순으로 배치되는 것을 확인 할 수 있습니다.</p>
+
+<blockquote>
+  <p>예제코드 : float03.html</p>
+</blockquote>
+
+<p>보정하기
+li의 요소는 순차적으로 배치를 하고, ul 요소를 float으로 하여 오른쪽으로 배치를 할 수 있습니다.</p>
+
+<blockquote>
+  <p>예제코드 : float04.html</p>
+</blockquote>
+
+<h2 id="폰트-스타일">폰트 스타일</h2>
+<hr />
+
+<h3 id="font-family">font-family</h3>
+<p>서체를 의미 합니다.</p>
+
+<p>만일 <code class="language-plaintext highlighter-rouge">돋움</code> 서체를 적용하고자 할때에는 다음과 같이 선언을 할 수 있습니다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">font-family</span><span class="o">:</span> <span class="nt">dotum</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>많이 사용하는 폰트로는 돋움, 굴림, 나눔고딕을 많이 사용합니다.</p>
+
+<p>하지만 나눔고딕의 경우 운영체제에서 기존 제공하는 폰트가 아니라서
+외부 웹폰트를 통하여 적용하여야 합니다.</p>
+
+<p>영문 폰트는
+verdana, tahoma, arial, 등이 많이 사용이 됩니다.</p>
+
+<h3 id="font-size">font-size</h3>
+<p>글씨의 크기를 조정할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>font-size:12px;
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">데스크탑</code>용 웹사이트는 11px, 12px을 많이 사용을 하였으나,
+<code class="language-plaintext highlighter-rouge">모바일</code>등 웹 <code class="language-plaintext highlighter-rouge">점근성</code>을 위해서 최근에는 14px을 많이 사용하는 추세 입니다.</p>
+
+<ul>
+  <li>em</li>
+  <li>pt</li>
+  <li>px</li>
+  <li>%</li>
+</ul>
+
+<p>4가지의 단위를 많이 사용합니다.</p>
+
+<h3 id="font-weight">font-weight</h3>
+<p>폰트의 굵기를 설정합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">font-weight</span><span class="o">:</span> <span class="nt">bold</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>bold</li>
+  <li>normal</li>
+</ul>
+
+<p>퐅트를 굵게 표시하는 요소들
+th, strong, b, h1~h6
+는 굵은 폰트로 처리를 합니다.
+&lt;= 이러한 요소들을 강제로 weight를 변경할 수 있습니다.</p>
+
+<h3 id="text-align">text-align</h3>
+<p><code class="language-plaintext highlighter-rouge">텍스트</code> 또는 <code class="language-plaintext highlighter-rouge">inline</code> 요소, <code class="language-plaintext highlighter-rouge">inline-block</code> 요소를 x축 기반으로 중앙 정렬을 할 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">블럭</code> 요소는 가운데 정렬을 할 수 없습니다.</p>
+
+<ul>
+  <li>left</li>
+  <li>right</li>
+  <li>center</li>
+  <li>justify</li>
+</ul>
+
+<h3 id="vertial-align">vertial-align</h3>
+<p>인라인, 텍스트 세로 정렬이 가능합니다.</p>
+
+<ul>
+  <li>middle</li>
+  <li>top</li>
+  <li>bottom</li>
+</ul>
+
+<h4 id="테이블-적용">테이블 적용</h4>
+<p>테이블 td에서 텍스트가 적용될때 vertial-align 을 적용할 수 있습니다.
+테이블은 기본값은 middle 입니다.</p>
+
+<h3 id="color">color</h3>
+<p>색상을 변경합니다.</p>
+
+<h4 id="색상값">색상값</h4>
+
+<h2 id="clear">clear</h2>
+<p>float 속성의 영향을 해제 합니다.</p>
+
+<blockquote>
+  <p>예제코드 : clear01.html</p>
+</blockquote>
+
+<p>이전에 float 설정한 li외에 이후의 div 요소에도 float 속성이 적용된 것을 볼 수 있습니다.</p>
+
+<p>float은 지정한 속성외에 다음 요소에도 영향이 미치게 됩니다.
+이를 해결을 하기 위해서는 clear 속성을 주어야 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">clear</span><span class="p">:</span><span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드 : clear02.html</p>
+</blockquote>
+
+<p>div는 float 속성이 해제되어 다음줄에 위치한 것을 볼 수 있습니다.</p>
+
+<p>레이아웃 배치시 float 속성의 영향으로 위치가 틀어지는 경우가 발생합니다.</p>
+
+<p>float 속성이 적용되면, 높이가 0이 되어집니다.</p>
+
+<h3 id="가상-선택자를-통한-clear-속성">가상 선택자를 통한 clear 속성</h3>
+<p>float 속성을 해제하기 위해서 가상선택자를 이용합니다.</p>
+
+<blockquote>
+  <p>예제코드 : clear04.html</p>
+</blockquote>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">선택자</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span><span class="s1">""</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>가상선택자 after는 요소의 뒤에 추가되는 내용 또는 속성을 말합니다.</p>
+
+<p>content
+요소뒤에 추가 내용을 넣어 줍니다. content는 inline 요소와 비슷합니다.
+content는 가상의 span 과 같은 요소가 추가되는 것과 같습니다.</p>
+
+<p>인라인 요소는 <code class="language-plaintext highlighter-rouge">clear:both</code>가 적용되지 않습니다. 따라서, content 를 블럭 요소로 변환을 해주어야 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">선택자</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span><span class="s1">""</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span><span class="nb">block</span><span class="p">;</span>
+    <span class="nl">clear</span><span class="p">:</span><span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>clear 클래스를 미리 만들어 놓고, 다중클래스 선택자를 이용하여 사용을 하면 편리 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.clear</span><span class="nd">:after</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span><span class="s1">""</span><span class="p">;</span>
+    <span class="nl">display</span><span class="p">:</span><span class="nb">block</span><span class="p">;</span>
+    <span class="nl">clear</span><span class="p">:</span><span class="nb">both</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="배경background">배경(background)</h2>
+
+<h3 id="배경이미지">배경이미지</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-image</span><span class="nd">:url</span><span class="o">(</span><span class="nt">이미지</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-repeat</span><span class="nd">:no-repeat</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>repeat : 반복허용</li>
+  <li>repeat-x : 가로만 반복허용</li>
+  <li>repeat-y</li>
+  <li>no-repeat</li>
+</ul>
+
+<h3 id="배경색">배경색</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-color</span><span class="o">:</span> <span class="nt">색</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="배경위치-변경">배경위치 변경</h3>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-position</span><span class="nd">:위치</span>
+</code></pre></div></div>
+
+<ul>
+  <li>right</li>
+  <li>top</li>
+  <li>left</li>
+  <li>bottom</li>
+  <li>center</li>
+</ul>
+
+<p>background-position: rigth top
+background-position: rigth bottom
+background-position: center top</p>
+
+<p>정가운데 위치
+background-position: center</p>
+
+<p>숫자값으로 지정</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-position</span><span class="o">:</span> <span class="err">10</span><span class="nt">px</span> <span class="err">10</span><span class="nt">px</span>
+</code></pre></div></div>
+<p>죄측 상단을 기준으로 떨어진 x, y 값에 배치를 합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">%</code>를 통하여 지정할 수 있습니다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-position</span><span class="o">:</span> <span class="err">10</span><span class="o">%</span> <span class="err">10</span><span class="o">%</span>
+</code></pre></div></div>
+
+<p>한번에 정의하기</p>
+
+<p><code class="language-plaintext highlighter-rouge">background</code> 속성명 뒤에 여러 값을 순차적으로 나열을 하면 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="sx">url(img.png)</span> <span class="nb">no-repeat</span> <span class="m">20px</span> <span class="nb">center</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="텍스트-스타일">텍스트 스타일</h2>
+
+<h3 id="줄간격">줄간격</h3>
+<p><code class="language-plaintext highlighter-rouge">line-height</code> 속성은 여러 텍스트의 줄간격을 지정합니다.</p>
+
+<p>줄간격은 텍스트의 중심선을 기준으로 간격을 처리합니다.</p>
+
+<h3 id="들여쓰기">들여쓰기</h3>
+<p>기본값은 0 입니다.</p>
+
+<p>text-indent:10px</p>
+
+<h3 id="자간">자간</h3>
+<p>letter-spacing:0;
+기본값은 0 입니다.</p>
+
+<h3 id="꾸밈">꾸밈</h3>
+<p>text-decoration</p>
+
+<ul>
+  <li>overline</li>
+  <li>none</li>
+  <li>line-through</li>
+</ul>
+
+<p>밑줄이 있는 a 링크의 밑줄을 삭제 할때 자주 사용을 합니다.</p>
+
+<h2 id="display-속성">display 속성</h2>
+<p>요소가 보여지는 속성을 변경합니다.</p>
+
+<ul>
+  <li>block : 블럭요소로 변경합니다.</li>
+  <li>inline : inline 요소로 변경합니다.</li>
+  <li>inline-block : 블럭과 인라인을 모두 적용합니다. 한줄표시와 여백설정이 가능합니다.</li>
+  <li>none : 화면에서 표시를 제외합니다. 화면 낭독기에서 읽지 않습니다.</li>
+</ul>
+
+<p>ex) span 테그는 인라인 속성을 가지고 있기 대문에, width와 height가 적용되지 않습니다.</p>
+
+<blockquote>
+  <p>예제코드 : display0.html</p>
+</blockquote>
+
+<p>이를 변경하기 위해서는 display 속성을 block으로 변경해 주어야 합니다.</p>
+
+<blockquote>
+  <p>예제코드 : display1.html</p>
+</blockquote>
+
+<h3 id="inline-요소로-변경하기">inline 요소로 변경하기</h3>
+<p>div와 같이 블록 요소를 display:inline 으로 변경할 수 있습니다.</p>
+
+<blockquote>
+  <p>예제코드 : display2.html</p>
+</blockquote>
+
+<h3 id="inline-block">inline-block</h3>
+<p><code class="language-plaintext highlighter-rouge">인라인</code> 속성과 <code class="language-plaintext highlighter-rouge">블럭</code> 속성 두가지를 가지고 있습니다.</p>
+
+<h3 id="none">none</h3>
+<p>화면에서 제거를 합니다.</p>
+
+<h2 id="overflow">overflow</h2>
+<p>정해진 영역에 초과하는 데이터가 있을 경우 처리하는 방법입니다.</p>
+
+<h3 id="visible">visible</h3>
+<p>기본값 입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">overflow</span><span class="nd">:visible</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>요소의 크기가 넘어가도 허용하여 출력합니다.
+예제코드 : overflow0.html</p>
+
+<h3 id="hidden">hidden</h3>
+<p>넘아 가는 부분을 표시 하지 않습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">overflow</span><span class="nd">:hidden</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>예제코드 : overflow1.html</p>
+
+<h3 id="auto">auto</h3>
+<p>초과되는 내용이 있을 경우 스크롤을 생성합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">overflow</span><span class="nd">:auto</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>예제코드 : overflow3.html</p>
+
+<p>이전에는 overflow auto와 같은 결과물을 생성하기 위해서
+iframe을 많이 사용을 하였습니다.</p>
+
+<p>오버플로우 auto값을 적용하기 위해서는 width 또는 height 가 <code class="language-plaintext highlighter-rouge">반드시 존재</code>햐야 합니다.</p>
+
+<p>오버플로우 스크롤은 기본적으로 <code class="language-plaintext highlighter-rouge">키보드 컨트롤(page up/down)</code>이 불가능합니다.
+키보드 컨트롤을 가능하게 하기 위해서는 tabindex 속성을 이용하여 처리 합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">tabindex=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+내용....
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>tabindex는 <code class="language-plaintext highlighter-rouge">tab</code>키 입력시 선택되는 순서 입니다. 탭 키를 입력하면 포커스가 이동하여 선택 진입이 되기 때문에 키보드 컨트롤이 가능하게 됩니다.
+단, 크롬은 지원하지 않고 ie만 지원을 합니다.</p>
+
+<h2 id="css-선택자">CSS 선택자</h2>
+<p>요소를 선택하기 위한 선택자에 대해서 알아 봅니다.</p>
+
+<h3 id="자손-선택자">자손 선택자</h3>
+<p>요소와 요소 사이를 스페이스 공백으로 구분하여 선택을 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>요소1 요소2 {
+
+}
+</code></pre></div></div>
+
+<p>자손은 모든 <code class="language-plaintext highlighter-rouge">요소1</code>에 속한 모든 <code class="language-plaintext highlighter-rouge">요소2</code>를 선택합니다.</p>
+
+<h3 id="자손선택-스패이스-공백">자손선택 스패이스 공백</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>요소 클래스 {
+
+}
+</code></pre></div></div>
+
+<p>요소 안에 있는 클래스 이름을 가지는 요소를 선택합니다.</p>
+
+<h3 id="요소와-클래스명이-두개가-일치하는-선택">요소와 클래스명이 두개가 일치하는 선택</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>요소.클래스 {
+
+}
+</code></pre></div></div>
+
+<p>예)</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"aaa"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>요소#아이디 {
+
+}
+</code></pre></div></div>
+
+<h3 id="쉼펴">쉼펴(,)</h3>
+<p>쉼표는 and 성격의 요소를 선택합니다.
+두개 이상의 요소를 동시에 선택할 수 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>div, p {
+
+}
+</code></pre></div></div>
+<p>div 와 p 요소를 모두 선택합니다.</p>
+
+<h3 id="선택응용1">선택응용1</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>요소1.클래스 요소2#아이디 {
+
+}
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"div"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">id=</span><span class="s">"name"</span><span class="nt">&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h3 id="형제-선택자">형제 선택자</h3>
+
+<p>요소 + 요소</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nt">div</span> <span class="o">+</span> <span class="nt">div</span> <span class="p">{</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;div&gt;</span>첫번째<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div&gt;</span>두번째<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>두번째 div 형태 요소만 선택이 됩니다.</p>
+
+<h3 id="자식">자식</h3>
+<p>자식은 <code class="language-plaintext highlighter-rouge">&gt;</code>로 표시를 합니다.</p>
+
+<p>선택하자과 하는 첫번째 깊이의 요소만을 선택합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;style&gt;
+div &gt; span {
+    color:red
+}
+&lt;/style&gt;
+</code></pre></div></div>
+
+<h3 id="속성-선택">속성 선택</h3>
+<p>특정 속성을 가지는 요소를 선택합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">input</span><span class="o">[</span><span class="nt">type</span><span class="o">=</span><span class="s1">"text"</span><span class="o">]</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span><span class="m">1px</span> <span class="nb">solid</span> <span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>name 속성값이 있는 경우 선택</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">input</span><span class="o">[</span><span class="nt">name</span><span class="o">]</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="가상선택자">가상선택자</h3>
+
+<p>마우스의 움직임을 처리합니다.</p>
+
+<ul>
+  <li>:hover
+요소 위에 마우스가 위치했을 때 반응동작을 지정합니다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span><span class="nd">:hover</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>:active
+요소를 마우스 클릭으로 누르고 있는 경우</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span><span class="nd">:active</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>:focus
+초점이 잡혀 있을 경우를 말합니다. 키보드의 텝키를 이용하여 
+포커스를 지정 또는 이동할 수 있습니다.</li>
+</ul>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span><span class="nd">:focus</span> <span class="p">{</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>포커스는 마크업한 순서대로 이동을 하게 됩니다.</p>
+
+<h3 id="자식-선택자">자식 선택자</h3>
+
+<p>첫번째 자식 요소만을 선택합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>요소1 요소2:fitst-child {
+
+}
+</code></pre></div></div>
+
+<p>요소와 자식의 순서가 일치를 하여야 합니다.
+만일 첫번째 자식이 선택한 요소2가 아닐 경우 선택되지 않습니다.</p>
+
+
+    </div>    
+</body>
+</html>

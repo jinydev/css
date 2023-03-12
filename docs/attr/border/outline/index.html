@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <blockquote>
+  <p>CSS3</p>
+  <h1 id="outline">outline</h1>
+</blockquote>
+
+<p>포커스 초첨이 있는 요소일 경우, 외각선을 설정할 수 있습니다.</p>
+
+<p>기본값은 연한 파랑색으로 표시가 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.link1</span><span class="nd">:focus</span> <span class="p">{</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">brown</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>초점 외에도 강제 설정시 일반상태에서도 outline을 출력할 수도 있습니다.</p>
+
+<h3 id="outline-vs-border">outline vs border</h3>
+
+<p>outline은 border는 유사합니다. 아웃라인은 외각선 밖에 위치합니다.
+만일, outline과 border를 2개 설정하여 중첩된 선을 만들 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">brown</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/outline2.html</p>
+</blockquote>
+
+<blockquote>
+  <p>참조: 아웃라인은 외곽선과 달리 상/하/좌/우 개별로 선택하여 지정을 할 수 없습니다.</p>
+</blockquote>
+
+<h2 id="outline-offset">outline-offset</h2>
+<p>아웃라인과 외각선간의 간격은 없습니다. 중간에 간격을 두기 위해서는
+<code class="language-plaintext highlighter-rouge">outline-offset</code> 속성을 주어야 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">outline-offset</span><span class="o">:</span> <span class="err">10</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제파일: ./sample/outline3.html</p>
+</blockquote>
+
+<h3 id="outline은-주의-요소에-영향을-반영하지-않음">outline은 주의 요소에 영향을 반영하지 않음</h3>
+<p>예제파일을 확인해 보면 아웃라인의 좌측 상단이 잘려져 보인는 것을 
+볼 수 있습니다.</p>
+
+<p>outline은 주변 요소에 영향을 미치지 않습니다.</p>
+
+
+    </div>    
+</body>
+</html>

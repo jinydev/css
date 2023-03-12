@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="html-사이트만들기-연습">HTML 사이트만들기 연습</h1>
+<hr />
+<p>HTML, CSS를 이용하여 사이트를 만들어 보는 따라하기 실습을 연습해 봅니다.</p>
+
+<p><br /></p>
+
+<h2 id="스타일-초기화">스타일 초기화</h2>
+<hr />
+<p>크로스 브라우저에서 공통적인 디자인을 적용하기 위해서 스타일 시트를 초기화 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">font-family</span><span class="p">:</span> <span class="nb">sans-serif</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">li</span> <span class="p">{</span>
+    <span class="nl">list-style</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">a</span> <span class="p">{</span>
+    <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nt">img</span> <span class="p">{</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </div>    
+</body>
+</html>

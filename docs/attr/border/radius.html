@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="css3-정리">CSS3 정리</h1>
+<p>CSS2에서 3로 넘어오면서 많은 기능이 추가되었습니다.</p>
+
+<h2 id="border-radiis">border-radiis</h2>
+<p>테이블을 제외한 모든 요소에 적용을 할 수 있습니다.</p>
+
+<p>모서리가 둥근 사각형을 제작할 수 있습니다.
+이전에는 모서리가 둥근 형태일 경우 별도의 이미지로 만들어서 사용을 하는 경우가 흔하였습니다.
+하지만 border-radius로 인하여 손쉽게 둥근 모서리를 생성할 수 있습니다.</p>
+
+<h3 id="radius-전체-적용">radius 전체 적용</h3>
+<p>사각형 전체 모서리에 곡률을 적용을 할때에는 한개의 값만 지정하면 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span><span class="o">;</span> 
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제파일: radius.html</p>
+</blockquote>
+
+<h3 id="곡율적용으로-원-만들기">곡율적용으로 원 만들기</h3>
+<p>곡율을 사이즈의 50% 이상값을 주게 되면 곡율로 인하여 원형 모향이 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">50</span><span class="o">%;</span> 
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제파일 : ./sample/radius2.html</p>
+</blockquote>
+
+<p>사진에도 radius를 적용하여 둥근 모양을 만들 수 있습니다.
+과거에는 포토샵으로 둥근 이미지와 투명배경 작업을 하여 사용을 하였지만,
+최근에는 radius 를 적용하여 쉽게 원형 이미지를 만들어 낼 수 있습니다.</p>
+
+<h3 id="모서리-다르게-지정하기">모서리 다르게 지정하기</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span> <span class="err">25</span><span class="nt">px</span><span class="o">;</span> 
+</code></pre></div></div>
+
+<p>값을 지정하는 방법은 패딩값을 설정하는 규칙과 동일합니다.
+패딩의 경우 첫번째 값이 <code class="language-plaintext highlighter-rouge">좌/우</code>에 적용되고, 두번째 값은 <code class="language-plaintext highlighter-rouge">상/하</code>에 적용됩니다.</p>
+
+<p>radius의 경우에는 반시계 45도 회전하여 각각의 모서리에 적용이 되는 형태 입니다.</p>
+
+<p>첫번째 값은 왼쪽상단/오른쪽하단에 적용됩니다.
+두번째 값은 오른쪽 상단/ 왼쪽 하단에 적용합니다.</p>
+
+<h3 id="3개-적용">3개 적용</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span> <span class="err">25</span><span class="nt">px</span> <span class="err">10</span><span class="nt">px</span><span class="o">;</span> 
+</code></pre></div></div>
+
+<p>세번째 값은 오른쪽 하단에 적용이 됩니다.</p>
+
+<h3 id="4개-적용">4개 적용</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span> <span class="err">25</span><span class="nt">px</span> <span class="err">10</span><span class="nt">px</span> <span class="err">3</span><span class="nt">px</span><span class="o">;</span> 
+</code></pre></div></div>
+
+<p>네번째 값은 왼쪽 하단에 적용이 됩니다.</p>
+
+<h2 id="특정-모서리만-지정하기">특정 모서리만 지정하기</h2>
+<p>border-radius는 전체 모서리에 일괄적으로 곡율을 적용하는 속성입니다.</p>
+
+<p>특정 모서리만 곡율을 적용할 수 있습니다.
+이때는 모서리를 지정하는 속성을 선택합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-bottom-left-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+<blockquote>
+  <p>예제코드 : ./sample/radius6.html</p>
+</blockquote>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-bottom-right-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-top-left-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border-top-right-radius</span><span class="o">:</span> <span class="err">50</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="곡율-적용하여-버튼-만들기">곡율 적용하여 버튼 만들기</h2>
+
+<blockquote>
+  <p>예제코드: ./sample/radius11.html</p>
+</blockquote>
+
+
+    </div>    
+</body>
+</html>

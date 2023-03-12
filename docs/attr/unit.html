@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="css-단위">CSS 단위</h1>
+<p>CSS는 다양한 종류의 단위를 가지고 있습니다.
+스타일시트에서 사용되는 단위들에 대해서 알아 봅니다.</p>
+
+<h2 id="키워드">키워드</h2>
+<p>CSS의 값으로 <code class="language-plaintext highlighter-rouge">키워드</code>를 사용하는 방법입니다. 키워드는 속성별로 적용되는 값이 틀립니다. 하지만, vscode와 같은
+도구를 사용하게 되면 키워드를 예시로 보여주기 때문에 보다 쉽게 선택하여 적용할 수 있습니다.</p>
+
+<h2 id="크기단위">크기단위</h2>
+<p>CSS값으로 사용할 수 있는 크기 단위 입니다.</p>
+
+<ul>
+  <li>
+    <p>px : 절대적으로 크기를 지정할 때는 px 단위를 시용합니다.</p>
+  </li>
+  <li>
+    <p>% : 퍼센트 단위는 기본 설정된 크기에서 상대적으로 크기를 지정합니다.</p>
+  </li>
+  <li>
+    <p>em : em  단위는 배수를 나타내는 단위입니다.</p>
+  </li>
+  <li>
+    <p>rem</p>
+  </li>
+</ul>
+
+<h2 id="색상단위">색상단위</h2>
+
+<ul>
+  <li>색상 키워드</li>
+</ul>
+
+<p>RGB 단위는 R(빨간색),   G(초록색) ,   B(파란색) 의 조합을 사용하여
+색상을 표현하는 단위입니다.</p>
+
+<ul>
+  <li>Hex 코드</li>
+  <li>rgb 단위</li>
+  <li>rgba</li>
+  <li>hsl</li>
+  <li>hsla</li>
+</ul>
+
+<h2 id="url-단위">URL 단위</h2>
+<p>미지 파일이나 폰트 파일을 불러올 때는 URL 단위를 사용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">body</span> <span class="p">{</span>
+    <span class="nl">background-image</span><span class="p">:</span> <span class="nb">url</span> <span class="p">(</span><span class="s2">'파일'</span><span class="p">)</span> <span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">url()</code>함수 내부에 경로를 입력하면 됩니다.</p>
+
+
+    </div>    
+</body>
+</html>

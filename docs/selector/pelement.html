@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="가상-요소-선택자">가상 요소 선택자</h1>
+<p>HTML 문서의 요소로는 존재하지 않지만, 마치 존재하는 것처럼 CSS 스타일로 요소를 생성하여 처리합니다.</p>
+
+<h2 id="가상요소란">가상요소란?</h2>
+
+<p>가상 요소(pseudo-element)는 해당 HTML 요소의 <code class="language-plaintext highlighter-rouge">특정 부분만을 선택</code>할 때 사용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">선택자</span><span class="nd">::가상요소이름</span> <span class="p">{</span>
+    
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="문자-선택자">문자 선택자</h2>
+<p>문자 가상 요소 선택자는 태그 내부 특정 조건의 문지를 선택히는 선택자입니다.</p>
+
+<p>문자 선택자는 가상 요소 선택지로 <code class="language-plaintext highlighter-rouge">::</code> 기호를 시용하는 것이 표준이지만 <code class="language-plaintext highlighter-rouge">:</code> 기호를 시용해도 정상 작동합니다.</p>
+
+<ul>
+  <li>시작문자 선택</li>
+  <li>전후 문자 선택자</li>
+  <li>반응 문자 선택자</li>
+</ul>
+
+<h2 id="시작문자-선택">시작문자 선택</h2>
+<p>시작 문자 선택지는 태그 내부의 첫 번째 글자와 첫 번째 줄을 선택할 때 시용히는- 선택자입니다.</p>
+
+<h4 id="first-line">::first-line</h4>
+<p>텍스트의 첫번째 라인만을 선택합니다. 이는 블록 레벨 요소에서만 사용이 가능합니다.</p>
+
+<h4 id="first-letter">::first-letter</h4>
+<p>텍스트의 첫 글자만을 선택합니다. 이는 블록 레벨 요소에서만 사용이 가능합니다.</p>
+
+<h2 id="전후-문자-선택자">전후 문자 선택자</h2>
+<p>전후 문자 선택지는 특정 태그의 전후에 위치하는 공간을 선택하는 선택자입니다.</p>
+
+<p>전후 문자 선택자에는 content 속성을 사용할수 있습니다</p>
+
+<h4 id="before">::before</h4>
+<p>특정 요소의 내용(content) 부분 바로 앞에 다른 요소를 삽입할 때 사용합니다.</p>
+<blockquote>
+  <p>CSS2부터 정의되었습니다.</p>
+</blockquote>
+
+<blockquote>
+  <p>사용 예)</p>
+</blockquote>
+
+<blockquote>
+  <div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.require</span><span class="nd">::before</span> <span class="p">{</span>
+    <span class="nl">content</span><span class="p">:</span> <span class="s2">'*'</span><span class="p">;</span>
+    <span class="nl">margin-right</span><span class="p">:</span> <span class="m">2px</span><span class="p">;</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>  </div>
+
+</blockquote>
+
+<h4 id="after">::after</h4>
+<p>특정 요소의 내용(content) 부분 바로 뒤에 다른 요소를 삽입할 때 사용합니다.</p>
+<blockquote>
+  <p>CSS2부터 정의되었습니다.</p>
+</blockquote>
+
+<p>툴팁 만들기</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="o">[</span><span class="nt">data-tooltip</span><span class="o">]</span> <span class="p">{</span>
+        <span class="nl">position</span><span class="p">:</span><span class="nb">relative</span><span class="p">;</span>
+    <span class="p">}</span> 
+    
+    <span class="o">[</span><span class="nt">data-tooltip</span><span class="o">]</span><span class="nd">:hover::after</span> <span class="p">{</span>
+        <span class="nl">content</span><span class="p">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">data-tooltip</span><span class="p">);</span>
+        <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+        <span class="nl">top</span><span class="p">:</span><span class="m">0px</span><span class="p">;</span>
+        <span class="nl">left</span><span class="p">:</span><span class="m">50px</span><span class="p">;</span>
+        <span class="nl">background-color</span><span class="p">:</span> <span class="no">black</span><span class="p">;</span>
+        <span class="nl">color</span><span class="p">:</span><span class="no">white</span><span class="p">;</span>
+        <span class="nl">width</span><span class="p">:</span><span class="m">150px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">data-tooltip=</span><span class="s">"클릭하세요"</span> <span class="nt">&gt;</span>
+    보내기
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<h2 id="반응-문자-선택자">반응 문자 선택자</h2>
+<p>반응 문자 선택자는 시용자가 문자와 반응해서 생기는 영역을 선택하는 선택자입니다.</p>
+
+<h4 id="selection">::selection</h4>
+<p>해당 요소에서 사용자가 선택한 부분만을 선택할 때 사용합니다.</p>
+
+
+    </div>    
+</body>
+</html>

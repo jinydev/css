@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <p>속성</p>
+
+<h2 id="가시속성">가시속성</h2>
+<p>화면에 보이는 속성을 지정합니다.</p>
+
+<h3 id="display">display</h3>
+
+<ul>
+  <li>none</li>
+  <li>block</li>
+  <li>inline</li>
+  <li>inline-block</li>
+</ul>
+
+<p>블럭형태의 요소배열을 인라인 형태의 요소 배열로 변경을 할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">inline</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>none은 화면에 안보이게 하는 속성입니다. 가장 많이 사용되는 속성입니다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>block은 none의 반대로 화면에 다시 출력하도록 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">h1</span> <span class="p">{</span>
+    <span class="nl">display</span><span class="p">:</span> <span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>inline-block 공백 여부여 적용 범위가 다르게 됩니다.</p>
+
+<h3 id="visibility">visibility</h3>
+<p>화면에 출력 여부 제어 합니다.
+display 속성과 차이점은 화면에 요소의 출력을 제한할때, 요소 자체를 남겨누고 안보기게 하는 것인지, 요소만 안보이게 하는 것인지의 차이 점이 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+    <span class="nt">visibility</span><span class="o">:</span> <span class="nt">hidden</span><span class="o">;</span>
+
+</code></pre></div></div>
+
+<h3 id="opacity">opacity</h3>
+<p>투명도를 조정합니다.</p>
+
+<p>값은 0~1사이의 값을 지정합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">opacity</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">8</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>색상을 지정과 투명도를 같이 지정할 수 있습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">rgba()</code>함수는 4개의 인자값을 전달 받습니다. 마지막은 투명도 입니다.</p>
+
+<h2 id="박스">박스</h2>
+
+<p>마진, 보더, 패딩, 높이, 폭 5개를 말합니다.
+순서가 정해져 있습니다.</p>
+
+<h3 id="폭과-높이-설정">폭과 높이 설정</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>width:300;
+width:50;
+backgound-color:red;
+</code></pre></div></div>
+
+<h4 id="실제적-사이즈">실제적 사이즈</h4>
+
+<p>배경색의 적용범위 패딩까지 적용됩니다.</p>
+
+<h4 id="box-sizing">box-sizing</h4>
+
+<h3 id="테두리">테두리</h3>
+<p>테두리(border)에 대해서 알아 봅니다.</p>
+
+<ul>
+  <li>가로폭</li>
+  <li>스타일</li>
+  <li>색상</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">border-width</code>는 테두리의 두께를 의미합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">border-style</code>은 테두리의 종류, 다양한 종류가 존재합니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">border-color</code>는 테두리의 색상을 말합니다.</p>
+
+<p>3가지의 속성값을 <code class="language-plaintext highlighter-rouge">border</code> 속성으로 동시에 적용을 할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">border</span><span class="o">:</span> <span class="err">10</span><span class="nt">px</span> <span class="nt">solid</span> <span class="nt">red</span><span class="o">;</span>
+</code></pre></div></div>
+
+
+    </div>    
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="멀티-백그라운드">멀티 백그라운드</h1>
+<hr />
+
+<p>css2에서는 하나의 요소에 한개의 배경만 설정이 가능하였습니다.</p>
+
+<p>css3로 넘어오면서 하나의 요소에 여러개의 배경을 설정할 수 있게 되었습니다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">쉼표</code>를 통하여 여러개의 배경 설정을 지정할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background</span><span class="o">:</span> <span class="nt">설정1</span><span class="o">,</span> <span class="nt">설정2</span><span class="o">,</span> <span class="nt">설정3</span><span class="o">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드 : ./sample/background11.html</p>
+</blockquote>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background-image</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="nt">img1</span><span class="nc">.png</span><span class="o">),</span> <span class="nt">url</span><span class="o">(</span><span class="nt">img2</span><span class="nc">.png</span><span class="o">),</span> <span class="nt">url</span><span class="o">(</span><span class="nt">img3</span><span class="nc">.png</span><span class="o">);</span>
+<span class="nt">background-repeat</span><span class="o">:</span> <span class="nt">no-repeat</span><span class="o">,</span> <span class="nt">repeat-x</span><span class="o">,</span> <span class="nt">repeat-y</span><span class="o">;</span>
+<span class="nt">background-position</span><span class="o">:</span> <span class="nt">top</span><span class="o">.</span> <span class="nt">left</span><span class="o">,</span> <span class="nt">bottom</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>삽입되는 이미지와 추가 속성을 분리하여 1:1 대응을 합니다.</p>
+
+
+    </div>    
+</body>
+</html>

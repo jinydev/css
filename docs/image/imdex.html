@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="이미지-속성">이미지 속성</h1>
+
+<h2 id="스프라이트-이미지">스프라이트 이미지</h2>
+<p>스프라이트 이미지는 여러 이미지를 한장의 이미지 파일로 묽어 놓은 것을 말합니다.</p>
+
+<p>작은 이미지들을 한장의 이미지로 묽어 놓는 이유는 서버에 이미지를 요청하는 <code class="language-plaintext highlighter-rouge">시간</code>을 줄이기 위해서 입니다.
+스프라이트 이미지는 background-position 속성을 같이 사용 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">background</span><span class="o">:</span> <span class="nt">url</span><span class="o">(</span><span class="s2">'스프라이트.jpg'</span><span class="o">);</span>
+<span class="nt">background-position</span><span class="o">:</span> <span class="nt">-62</span> <span class="err">0</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+    </div>    
+</body>
+</html>

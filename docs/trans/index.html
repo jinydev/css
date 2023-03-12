@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="변형-스타일">변형 스타일</h1>
+<p>요소를 옮기거나 크기를 조절하고 회전시키는 등 변형 작업</p>
+
+<h2 id="변형transtorm">변형(transtorm)</h2>
+<p>웹 요소의 위치를 옮기거나 크기를 조절하고 회전，왜곡시키는 것을 변형(transform)이라고 합니다.</p>
+
+<h3 id="2차원3차원-좌표계">2차원，3차원 좌표계</h3>
+<p>수평이나 수직으로 옮기는 것은 x축과 y축으로 이동하는 것이기 때문에 2차원 좌표에서 실행하는 일이고，
+원근감을 추가하면 z축에서 앞뒤로 이동하는 것이므로 3차원 좌표계에서 실행합니다.</p>
+
+<h3 id="transform-속성---웹-요소-변형하기">transform 속성 - 웹 요소 변형하기</h3>
+<p>요소를 변경하려면 <code class="language-plaintext highlighter-rouge">transform</code>속성에 원하는 변형 함수를 함께 사용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform</span><span class="o">:</span> <span class="nt">변형함수</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>요소 이동함수를 이용하는 예제</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* x축으로 50px，y축으로 100px 이동*/</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">translate</span> <span class="o">(</span> <span class="err">50</span><span class="nt">px</span><span class="o">,</span>   <span class="nt">lOOpx</span><span class="o">)</span> <span class="o">;</span>   
+</code></pre></div></div>
+<p><code class="language-plaintext highlighter-rouge">translate()</code> 함수를 이용하여 요소를 이동합니다.</p>
+
+<p>transform는 다양한 변형 함수를 지원합니다.</p>
+
+<h3 id="translate---요소--이동시키기">translate - 요소  이동시키기</h3>
+<p>요소가 지정한 크기만큼 이동합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform</span><span class="nd">:translate</span><span class="o">(</span><span class="nt">tx</span><span class="o">,</span> <span class="nt">ty</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:translate3d</span><span class="o">(</span><span class="nt">txz</span> <span class="nt">ty</span><span class="o">,</span> <span class="nt">tz</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:translatex</span><span class="o">(</span><span class="nt">tx</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:translateY</span><span class="o">(</span><span class="nt">ty</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:translateZ</span><span class="o">(</span><span class="nt">tz</span><span class="o">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>translate(tx, ty) : 지정한 크71만큼 수평과 수직으로 이동합니다</li>
+  <li>tranlsate3d(tx, ty, tz) : 지정한 크기만큼 수평과 수작 앞뒤로 이동합니다.</li>
+  <li>translateX(tx) : 지정한 크기만큼 수평으로 이동합니다.</li>
+  <li>translateY(ty) : 지정한 크기만큼 수직으로 이동합니다.</li>
+  <li>translateZ(tz) : 지정한 크기만큼 앞뒤로 이동합니다.</li>
+</ul>
+
+<blockquote>
+  <p>transform 속성은 아직까지 완벽한 표준이 정해지지 
+않았기 때문에 속성 이름 앞에 -webkit-나 -moz- 같은브라우저 별 접두사를붙여야합니다.</p>
+</blockquote>
+
+<h3 id="scale---요소확대축소하기">scale - 요소확대/축소하기</h3>
+<p>지정한 크기만큼 확대/축소합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform</span><span class="nd">:scale</span><span class="o">(</span><span class="nt">sx</span><span class="o">,</span> <span class="nt">sy</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:scale3d</span><span class="o">(</span><span class="nt">sx</span><span class="o">,</span> <span class="nt">sy</span><span class="o">,</span> <span class="nt">sz</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:scaleX</span><span class="o">(</span><span class="nt">sx</span><span class="o">)</span>
+<span class="nt">transform</span><span class="nd">:scaleY</span><span class="o">(</span><span class="nt">sy</span><span class="o">)</span>
+<span class="nt">transformrscaleZ</span><span class="o">(</span><span class="nt">sz</span><span class="o">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>scale(sx, sy) : 지정한 크기만큼 수평과 수직으로 확대/축소합니다</li>
+  <li>scale3d(sx, sy, sz) : 지정한 크기만큼 수평과 수작 앞뒤로 확대/축소합니다.</li>
+  <li>scaleX(sx) : 지정한 크71만큼 수평으로 확대/축소합니다.</li>
+  <li>scaleY(sy) : 지정한 크기만큼 수직으로 확대/축소합니다.</li>
+  <li>scaleZ(sz) : 지정한 크기만큼 앞뒤로 확대/축소합니다.</li>
+</ul>
+
+<h3 id="rotate---요소회전하기">rotate - 요소회전하기</h3>
+<p>지정한각도만큼 웹 요소를 회전합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform</span><span class="nd">:rotate</span><span class="err">（</span><span class="nt">rx</span><span class="o">,</span> <span class="nt">ry</span><span class="o">,</span>  <span class="nt">각도</span><span class="err">）</span>
+<span class="nt">transform</span><span class="nd">:rotate3d</span><span class="err">（</span><span class="nt">rx</span><span class="o">,</span> <span class="nt">ry</span><span class="o">,</span> <span class="nt">rz</span><span class="o">,</span> <span class="nt">각도</span><span class="err">》</span>
+<span class="nt">transform</span><span class="nd">:rotateX</span><span class="err">（</span><span class="nt">각도</span><span class="err">》</span>
+<span class="nt">transform</span><span class="nd">:rotateY</span><span class="err">（</span><span class="nt">각도</span><span class="err">》</span>
+<span class="nt">transform</span><span class="nd">:rotateZ</span><span class="err">（</span><span class="nt">각도</span><span class="err">）</span>
+</code></pre></div></div>
+
+<ul>
+  <li>rotate(rx, ry, 각도) : 지정한 각도만큼 수평과 수직으로 회전합니다</li>
+  <li>
+    <p>rotate3d(rx, ry, rz, 각도): 지정한 각도만큼 회전합니다.</p>
+  </li>
+  <li>rotateX(rx, 각도》: 지정한 각도만큼 수평으로 회전합니다</li>
+  <li>rotateY(ry, 각도》: 지정한 각도만큼 수직으로 회전합니다.</li>
+  <li>rotateZ(rz, 각도) : 지정한 각도만큼 앞뒤로 회전합니다</li>
+</ul>
+
+<h3 id="skew---요소를--비틀어---왜곡하기">skew - 요소를  비틀어   왜곡하기</h3>
+<p>skew 변형은 지정한 각도만큼 요소를 비틀어 왜곡합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform</span><span class="o">:</span> <span class="nt">skew</span> <span class="err">（</span><span class="nt">각도</span><span class="err">，</span><span class="nt">각도</span><span class="err">》</span>
+<span class="nt">transform</span><span class="o">:</span> <span class="nt">skewX</span> <span class="err">（</span><span class="nt">각도</span><span class="err">》</span>
+<span class="nt">transform</span> <span class="nd">:skewY</span> <span class="err">（</span><span class="nt">각도</span><span class="err">）</span>
+</code></pre></div></div>
+
+<ul>
+  <li>skew(x각도，y각도》: 지정한 각도만큼 수평과 수직으로 왜곡합니다.</li>
+  <li>skewX(x각도》: 지정한 각도만큼 수평으로 왜곡합니다.</li>
+  <li>skewY(y각도》: 지정한 각도만큼 수직으로 왜곡합니다.</li>
+</ul>
+
+<h2 id="변형과-관련된-속성들">변형과 관련된 속성들</h2>
+<p>변형할 때 기준이 되는 원점을 바꾸거나 요소의 원 
+근감을 표현하거나，또는 요소의 뒷면을 표시하는 등 여러 속성을 함께 사용하면 더 많은 효과를 만들 수 있 
+습니다.</p>
+
+<h3 id="transform-origin-속성----변형-원점-설정하기">transform-origin 속성 -  변형 원점 설정하기</h3>
+<p>변형 원점을 설정</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform-orgin</span><span class="o">:</span> <span class="nt">x축</span> <span class="nt">y축</span> <span class="nt">x축</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>X축 : 원점에서의 X 좌푯값으로, 길이 값이나 백분율, left, center, right 중에서 사용할 수 있습니다.</li>
+  <li>y축 : 원점에서의 y 좌푯값으로 길이 값이나 백분율. top, center, bottom 중에서 선택할 수 있습니다.</li>
+  <li>z축 : 원점에서의 z 좌푯값으로, 길이 값만 사용할 수 있습니다</li>
+</ul>
+
+<h3 id="perspective---원근감표현하기">perspective - 원근감표현하기</h3>
+<p>perspective 속성은 잡아당기거 나밀어내어 원근감을갖게 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">perspective</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="perspective-origin-속성---원근감-조절하기">perspective-origin 속성 - 원근감 조절하기</h3>
+<p>perspective 속성과 함께 사용 합니다. 3D요소의 bottom 부분의 위치를 지정하는데，좀 더 높은곳에서 원근 
+을 조절하는 듯한 느낌을 만들 수 있습니다</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">perspect丄ve-or丄gin</span><span class="nd">:x축</span> <span class="nt">값</span> <span class="o">|</span>    <span class="nt">y축</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>x축 :
+3D 요소가 x축에서 어디에 위치하는지 지정합니다 사용할 수 있는 값은 길이 값이나 백분율. 
+left, right, center, top, bottom 입니다. 기본 값은 50%입니다.</p>
+  </li>
+  <li>
+    <p>y축 : 
+3D 요소가 노축에서 어디에 위치하는지 지정합니다. 사용할 수 있는 값은 길이 값이나 백분율,
+top, center, bottom입니다. 기본 값은 50%입니다</p>
+  </li>
+</ul>
+
+<h3 id="transform-style-속성---3d-변형-적용하기">transform-style 속성 - 3D 변형 적용하기</h3>
+<p>변형이 적용된 요소의 하위 요소 
+에 3D 변형을 적용할 것인지 결정합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transform-style</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>flat : 하위 요소를 평면으로 처리합니다.</li>
+  <li>preserve-3d : 하위 요소들에 3D 효과를 적용합니다.</li>
+</ul>
+
+<blockquote>
+  <p>transform-style 속성은 아직까지 혭키트 계열의 브라우저（크롬과 사파리）에서만 지원하고 있습니다.</p>
+</blockquote>
+
+<h3 id="backface-visibility-속성---2소의-뒷면-표시하기">backface-visibility 속성 - 2소의 뒷면 표시하기</h3>
+<p>요소의 뒷면，즉 반대쪽 면을 표시할 것인지를 결정하는 것입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">backface-visibility</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>visible : 뒷면을 표시합니다.</li>
+  <li>hidden : 뒷면을 표시하지 않습니다.</li>
+</ul>
+
+<h2 id="시간에-따른-변화를-만들어-주는-트랜지션">시간에 따른 변화를 만들어 주는 트랜지션</h2>
+<p>트랜지션(transition)이란 한 스타일에서 다른 스타일로 바뀌는 것을 말합니다.</p>
+
+<p>플래시나 자바스크립트 
+를 사용하지 않고 CSS 소스만으로 애니메이션 효과를 내는 방법에 대해 알아봅니다.</p>
+
+<h3 id="transition-property-속성---적용할-트랜지션-지정하기">transition-property 속성 - 적용할 트랜지션 지정하기</h3>
+<p>트랜지션 효과를 만드는 첫 번째 단계는 CSS 속성 중 어떤 속성에 트랜지션을 적용할 것인지 선택 
+하는 것입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-property</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>none : 트랜지션 동안 아무 속성도 바뀌지 않습니다.</p>
+  </li>
+  <li>
+    <p>all : all 값을 사용하거나 transition-property를 생략할 경우 요소의 모든 속성이 트랜지션 대상이 됩니 
+다. 기본 값입니다.</p>
+  </li>
+  <li>
+    <p>속성이름 : 트랜지션 효과를 적용할 속성 이름을 지정합니다. 예를 들어. 배경색만 바꿀 것인자 width 값을 바 
+꿀 것인지 원하는 것만 골라 지정할 수 있습니다. 속성이 여럿일 경우 쉼표0로 구분하여 나열합니다.</p>
+  </li>
+</ul>
+
+<h3 id="transition-duration-속성---트랜지션-진행-시간-지정하기">transition-duration 속성 - 트랜지션 진행 시간 지정하기</h3>
+<p>트랜지션이 진행될 시간을 지정합니다.
+속성이 여럿이라면 트랜지션 진행 시간도 쉼 
+표(,)로 구분하여 순서대로 여러 개 지정할수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-duration</span> <span class="o">:</span> <span class="nt">시간</span><span class="err">；</span>
+</code></pre></div></div>
+<blockquote>
+  <p>시간 단위는 초(seconds) 또는 밀리초(milliseconds)입니다.</p>
+</blockquote>
+
+<h3 id="transition-timing-function-속성---트랜지션-형태-선택하기">transition-timing-^function 속성 - 트랜지션 형태 선택하기</h3>
+<p>트랜지션 효과의 시작과 중간, 그리고 끝에서의 속도 곡선을 
+선택합니다</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-timing-function</span><span class="o">:</span> <span class="nt">속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>linear : 시작에서 끝까지 똑같은 속도로 트랜지션을 진행합니다.</li>
+  <li>ease : 처음에는 천천히 시작하고 점점 빨라지다가 마지막엔 천천히 끝냅니다. 기본 값입니다.</li>
+  <li>ease-in : 트랜지션 시작을 느리게 합니다.</li>
+  <li>ease-out : 트랜지션을 느리게 끝냅니다.</li>
+  <li>
+    <p>ease-in-out : 느리게 시작하고 느리게 끝냅니다</p>
+  </li>
+  <li>cubic-bezier(n,n,n,n) : 직접 베지에 함수를 정의해서 사용합니다. 시에서 사용할 수 있는 값은 0에서 1   사이입니다.</li>
+</ul>
+
+<h3 id="transition-delay-속성---지연-시간-설정하기">transition-delay 속성 - 지연 시간 설정하기</h3>
+<p>효과를 언제부터 시작할 것인지 정하는 지연 시간을 설정</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-delay</span><span class="o">:</span> <span class="nt">시간</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="transition-속성---트랜지션-속성-한꺼번에-표기하기">transition 속성 - 트랜지션 속성 한꺼번에 표기하기</h3>
+<p>transition ■속성을 시’용하면 transtion-property오］” transition-duration, transition-timing- 
+function, transition-delay 속성을한줄로 표기할수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="nd">:property</span> <span class="nt">값</span> <span class="o">|</span>        <span class="nt">duration</span> <span class="nt">값</span> <span class="o">|</span>        <span class="nt">timing-function</span> <span class="nt">값</span> <span class="o">|</span>         <span class="nt">delay</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="애니메이션-속성">애니메이션 속성</h2>
+<p>animation 
+속성을 이용하면 트랜지션보다 애니메이션을 더 쉽게 만들 수 있습니다.</p>
+
+<h3 id="animation-속성과-transition-속성">animation 속성과 transition 속성</h3>
+
+<p>animation 속성은 애니메이션에 소요되는 시간이나 지연 시간 등을 지정하는 것은 transition 속성 
+과 같지만，애니메이션의 시작에서부터 끝날 때까지 어느 지점이든 ©keyframe 속성을 사용해 애 
+니 메 이 션을 정 의할 수 있다는 점은 트랜지 션과 다릅니 다.</p>
+
+<h3 id="animation-duration-속성---애니메이션-실행-시간">animation-duration 속성 - 애니메이션 실행 시간</h3>
+<p>애니메이션을 얼마 동안 재생할 것인지 설정합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">animation-duration</span><span class="o">:</span> <span class="nt">Is</span><span class="o">;</span>  <span class="c">/* 애니메이션 진행 시간 1초 */</span>
+</code></pre></div></div>
+
+<h3 id="animation-name-속성">animation-name 속성</h3>
+<p>CSS로 애니메이션을 만들 때 @keyframes 속성을 이용해 여러 개의 애니메이션을 정의할 수 있는 
+데，특정 요소에 어떤 애니메이션을 적용할 것인지 정의하는속성이 animation-name 속성입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* 애니메이션 정의 */</span>
+<span class="nt">animat丄on-name</span><span class="o">:</span> <span class="nt">이름</span><span class="o">;</span>  
+</code></pre></div></div>
+
+<h3 id="animation-iteration-count-속성---반복-횟수-지정하기">animation-iteration-count 속성 - 반복 횟수 지정하기</h3>
+<p>애니메이션은 기본적으로 한 번만 실행하고 끝납니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">animation-iteration-count</span><span class="o">:</span> <span class="nt">in社nite</span><span class="o">;</span>   <span class="c">/* 애니메이션 반복 횟수 무제한 반복 */</span>
+</code></pre></div></div>
+
+<h3 id="animation-direction-속성---애니메이션-반대-방향으로-실행하기">animation-direction 속성 - 애니메이션 반대 방향으로 실행하기</h3>
+<p>애니메이션이 실행되고 나면 기본으로 원래 위치로 돌아가지만</p>
+
+<p>애니 메이션의 방향을 조절할 수 있습니 다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">animation-direction</span><span class="o">:</span> <span class="nt">alternate</span><span class="o">;</span>   <span class="c">/* 애니메이션 끝난 후 반대 방향으로 실행 */</span>
+</code></pre></div></div>
+
+<h3 id="animation-속성---애니메이션-관련-속성-한꺼번에-표기하기">animation 속성 - 애니메이션 관련 속성 한꺼번에 표기하기</h3>
+<p>animation 속성을 사용하면 필요 
+한 애니메이션 속성들을 한줄로 표기할수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">animation</span><span class="nd">:name</span> <span class="nt">값</span> <span class="o">|</span> <span class="nt">duration</span> <span class="nt">값</span> <span class="o">|</span> <span class="nt">timing-function</span> <span class="nt">값</span> <span class="o">|</span> <span class="nt">delay</span> <span class="nt">값</span> <span class="o">|</span> <span class="nt">iteration-count</span> <span class="nt">direction</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+
+    </div>    
+</body>
+</html>

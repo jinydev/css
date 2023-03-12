@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="gradient">gradient</h1>
+<hr />
+
+<p>멀티 백그라운드 기능을 같이 사용할 수도 없습니다.</p>
+
+<ul>
+  <li>linear</li>
+  <li>radial</li>
+</ul>
+
+<h2 id="2색-지정">2색 지정</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient01.html</p>
+</blockquote>
+
+<p>기본값으로 첫번째 지정한 색이 <code class="language-plaintext highlighter-rouge">위쪽</code>, 두번째 지정한 색이 <code class="language-plaintext highlighter-rouge">아래쪽</code>에 배치를 하게 됩니다.</p>
+
+<h3 id="방향으로-지정하기">방향으로 지정하기</h3>
+
+<p><code class="language-plaintext highlighter-rouge">to 방향</code>을 추가하여 <code class="language-plaintext highlighter-rouge">도작 지점</code>을 지정합니다.</p>
+
+<p>왼쪽에서 오른쪽으로 gradient 적용하기</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">right</span><span class="p">,</span> <span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient02.html</p>
+</blockquote>
+
+<p>오른쪽에서 왼쪽쪽으로 gradient 적용하기</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">left</span><span class="p">,</span> <span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient03.html</p>
+</blockquote>
+
+<p>대각선 적용</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">top</span> <span class="nb">right</span><span class="p">,</span> <span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="각도로-지정하기">각도로 지정하기</h3>
+
+<p>각도값을 +/- 로 지정을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="m">90deg</span><span class="p">,</span> <span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="여러색-적용하기">여러색 적용하기</h2>
+
+<p>여러개의 색을 적용을 할때에는 지정한 색의 수많큼 균등분할하여 적용이 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="m">90deg</span><span class="p">,</span> <span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">,</span> <span class="no">blue</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="gradient와-배경색-같이-넣기">gradient와 배경색 같이 넣기</h2>
+<p>기본적으로 gradient와 배경색을 같이 표시를 할 수 없습니다.
+다만, gradient를 색상값을 투명도가 지정된 방식으로 적용할 경우, 배경색을 같이 사용을 할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">left</span><span class="p">,</span> <span class="n">rega</span><span class="p">(),</span> <span class="n">rega</span><span class="p">())</span> <span class="n">배경색</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="반복-적용하기">반복 적용하기</h2>
+<p>gradient의 적용범위를 지정하여 반복할 수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">repeating-linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">left</span><span class="p">,</span> <span class="no">pink</span> <span class="m">10%</span><span class="p">,</span> <span class="no">purple</span> <span class="m">20%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>범위를 지정하여 패턴화 하여 적용할 수도 있습니다.</p>
+
+<h2 id="원형-gradient">원형 gradient</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">radial-gradient</span><span class="p">(</span><span class="no">pink</span><span class="p">,</span> <span class="no">purple</span><span class="p">,</span> <span class="no">red</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient21.html</p>
+</blockquote>
+
+<h3 id="비율-지정하기">비율 지정하기</h3>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">background</span><span class="p">:</span> <span class="n">radial-gradient</span><span class="p">(</span><span class="no">pink</span> <span class="m">15%</span><span class="p">,</span> <span class="no">purple</span> <span class="m">25%</span><span class="p">,</span> <span class="no">red</span> <span class="m">60%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient22.html</p>
+</blockquote>
+
+<h3 id="circle-설정">circle 설정</h3>
+<p>radial은 삽입하고자 하는 영역의 비율대로 원형모향으로 들어가게 됩니다.</p>
+
+<p>만일 영역이 정사각이 아닌 직사각형 일때 원형이 아닌 <code class="language-plaintext highlighter-rouge">타원</code> 모양으로 들거가게 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">400px</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span><span class="m">200px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="n">slid</span> <span class="no">red</span><span class="p">;</span>
+
+    <span class="nl">background</span><span class="p">:</span> <span class="n">radial-gradient</span><span class="p">(</span> <span class="no">pink</span> <span class="m">15%</span><span class="p">,</span> <span class="no">purple</span> <span class="m">25%</span><span class="p">,</span> <span class="no">red</span> <span class="m">60%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient23.html</p>
+</blockquote>
+
+<p>이를 원형 모양으로 들어가게 보정을 하기 위해서는 <code class="language-plaintext highlighter-rouge">circle</code> 옵션을 부여합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">width</span><span class="p">:</span><span class="m">200px</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span><span class="m">200px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="n">slid</span> <span class="no">red</span><span class="p">;</span>
+
+    <span class="nl">background</span><span class="p">:</span> <span class="n">radial-gradient</span><span class="p">(</span><span class="nb">circle</span><span class="p">,</span> <span class="no">pink</span> <span class="m">15%</span><span class="p">,</span> <span class="no">purple</span> <span class="m">25%</span><span class="p">,</span> <span class="no">red</span> <span class="m">60%</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient24.html</p>
+</blockquote>
+
+<h2 id="gradient-실습하기">gradient 실습하기</h2>
+<p>실습을 통하여 다양한 gradient 를 학습해 보도록 합니다.</p>
+
+<h3 id="무지개-만들기">무지개 만들기</h3>
+
+<blockquote>
+  <p>예제코드: ./sample/gradient31.html</p>
+</blockquote>
+
+<h2 id="포토샵-구현">포토샵 구현</h2>
+
+
+    </div>    
+</body>
+</html>

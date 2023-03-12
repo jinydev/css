@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="github-markdown.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="markdown-body">
+        <h1 id="id속성">id속성</h1>
+<hr />
+<p>id를 이용하여 요소를 선택합니다.
+id는 태그에 지정을 할 수 있는 속성입니다.
+아이디를 이용하여 요소를 선택할 수 있습니다.</p>
+
+<p><br /></p>
+
+<h2 id="id-속성-부여">id 속성 부여</h2>
+<p>html 테그안에 id 속성을 부여합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"heading"</span><span class="nt">&gt;</span>Hello world<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
+<p><br /></p>
+
+<h3 id="유일성">유일성</h3>
+<hr />
+<p>아이디는 하나의 문서에 중복되지 않도록 사용하는 것이 중요합니다.</p>
+
+<h2 id="css-선택">css 선택</h2>
+<hr />
+<p>테그의 속성으로 선택된 아이디를 선택할 수 있습니다.
+아이디를 선택할때에는 <code class="language-plaintext highlighter-rouge">#</code>기호를 사용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#heading</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </div>    
+</body>
+</html>
