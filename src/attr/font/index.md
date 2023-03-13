@@ -26,3 +26,31 @@ line-height 속성은 글자의 높이를 지정합니다.
 
 ## text-decoration 속성
 
+
+
+
+
+## 텍스트 스타일
+
+### 줄간격
+`line-height` 속성은 여러 텍스트의 줄간격을 지정합니다.
+
+줄간격은 텍스트의 중심선을 기준으로 간격을 처리합니다.
+
+### 들여쓰기
+기본값은 0 입니다.
+
+text-indent:10px
+
+### 자간
+letter-spacing:0;
+기본값은 0 입니다.
+
+### 꾸밈
+text-decoration
+
+* overline
+* none
+* line-through
+
+밑줄이 있는 a 링크의 밑줄을 삭제 할때 자주 사용을 합니다.

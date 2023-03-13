@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JinyDev CSS</title>
 
-    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -21,25 +21,53 @@
             border-bottom: 1px solid #cccccc;
         }
 
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
         .markdown-body h2 {
             padding-top: 10px;
         }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
 
         .markdown-body h3 {
             padding-top: 5px;
         }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h4 {
             padding-top: 3px;
         }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h5 {
             padding-top: 2px;
         }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h6 {
             padding-top: 1px;
         }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
 
 
 
@@ -52,24 +80,27 @@
 
 </head>
 <body>
+
     <div class="markdown-body">
         <h1 id="css란">CSS란</h1>
+<p><code class="language-plaintext highlighter-rouge">CSS</code>는 <code class="language-plaintext highlighter-rouge">Cascading Style Sheets</code>의 약자입니다.<br />
+최신의 웹페이지의 트랜드는 HTML로 페이지의 <code class="language-plaintext highlighter-rouge">골격</code>을 형성하고, CSS를 통하여 <code class="language-plaintext highlighter-rouge">디자인</code>을 입히는 방법으로 작업을 합니다.</p>
+
+<p>html을 꾸미기 위한 <code class="language-plaintext highlighter-rouge">선언적</code> 언어라고 할 수 있습니다.</p>
 
 <h2 id="css의-탄생">CSS의 탄생</h2>
-<hr />
-<p>CSS는 1996년 W3C가 웹사이트의 구조와 표현을 분리하기 위해서 도입하였습니다.
-CSS는 HTML의 마크업 쇼소에 스타일을 적용하기 위해서 W3C에서 고안한 언어 입니다.</p>
-
-<p>HTML과 문서의 스타일을 분리하여 적용할 수 있습니다.</p>
-
-<h2 id="css-버젼과-종류">CSS 버젼과 종류</h2>
-<p>최신의 버젼은 CSS3 입니다. 
-CSS은 이전에도 <code class="language-plaintext highlighter-rouge">CSS1</code> 과 <code class="language-plaintext highlighter-rouge">CSS2</code> 도 존재합니다.</p>
+<p>CSS는 1996년 <code class="language-plaintext highlighter-rouge">W3C</code>가 웹사이트의 <code class="language-plaintext highlighter-rouge">구조</code>와 <code class="language-plaintext highlighter-rouge">표현</code>을 분리하기 위해서 고안된 언어 입니다. 
+HTML에 요소를 선택하여 스타일을 적용함으로서 디자인을 적용합니다.</p>
 
 <h2 id="css-스타일의-목적">CSS 스타일의 목적</h2>
-<p>과거에는 웹사이트의 디자인 HTML의 구조와 이미지의 배치로 결정이 되었습니다. 하지만, 요즘 웹페이지의 디자인은 HTML이 아니라 CSS에 의해서 결정됩니다. 또한, 모바일 사용자가 많아지면서 CSS를 이용한 반응형 웹사이트를 구현해야 하는 경우가 늘어나고 있습니다.</p>
+<p>과거에는 웹사이트의 디자인은 잘 짜여진 HTML의 구조와 화면을 꾸미기 위한 작은 이미지들을 배치함으로서 사이트를 디자인 했습니다.</p>
 
-<h3 id="스타일시트-파일">스타일시트 파일</h3>
+<p>하지만, 요즘 모던 스타일의 웹페이지는 HTML 구조와 화면 UI를 분리하여 설계를 합니다.
+사이드의 구조는 HTML이 담당하고, 레이아웃과 배치, 모양들은 CSS로 결정됩니다.</p>
+
+<p>또한, PC 및 모바일 환경으로 인하여 화면사이즈에 맞게 자동으로 변경되는 <code class="language-plaintext highlighter-rouge">반응형 웹사이트</code>형태로 구현하는 추세 입니다.</p>
+
+<h2 id="스타일시트-파일이란">스타일시트 파일이란?</h2>
 <p>스타일을 관리하기 쉽도록 한 군데 모아놓은 것을 흔히 <code class="language-plaintext highlighter-rouge">스타일시트(stylesheet)</code> 라고 합니다.</p>
 
 <ul>
@@ -85,13 +116,10 @@ PC용 또는 프린트를 위한 출력용등 다양한 매체에 대한 문서�
   </li>
 </ul>
 
-<h2 id="css3">CSS3</h2>
-<p>CSS3는 HTML5에 포함되지는 않지만，웹 표준 기술을 이야기할 때 항상 HTML5와 함께 거론되는 기술입니다. 
-CSS3는 웹 표준 71술에서 중요한 위치를 차지하고 있습니다.</p>
-
-<p>CSS3는 CSS2나 CSS1 에 비해 좀 더 정교하고 화려한 화면을 구성할 수 있고，여기에 애니메이션까지 지원하고 있습니다.</p>
-
 
     </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

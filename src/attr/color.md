@@ -228,6 +228,71 @@ radial-gradient(위치，모양(및크기),  color-stop, [color-stop... ])
 
 
 
+## clear
+float 속성의 영향을 해제 합니다.
+
+> 예제코드 : clear01.html
+
+이전에 float 설정한 li외에 이후의 div 요소에도 float 속성이 적용된 것을 볼 수 있습니다.
+
+float은 지정한 속성외에 다음 요소에도 영향이 미치게 됩니다.
+이를 해결을 하기 위해서는 clear 속성을 주어야 합니다.
+
+```css
+div {
+    clear:both;
+}
+```
+
+> 예제코드 : clear02.html
+
+div는 float 속성이 해제되어 다음줄에 위치한 것을 볼 수 있습니다.
+
+레이아웃 배치시 float 속성의 영향으로 위치가 틀어지는 경우가 발생합니다.
+
+
+float 속성이 적용되면, 높이가 0이 되어집니다.
+
+
+### 가상 선택자를 통한 clear 속성
+float 속성을 해제하기 위해서 가상선택자를 이용합니다.
+
+> 예제코드 : clear04.html
+
+```css
+선택자:after {
+    content:"";
+}
+```
+
+가상선택자 after는 요소의 뒤에 추가되는 내용 또는 속성을 말합니다.
+
+content
+요소뒤에 추가 내용을 넣어 줍니다. content는 inline 요소와 비슷합니다.
+content는 가상의 span 과 같은 요소가 추가되는 것과 같습니다.
+
+인라인 요소는 `clear:both`가 적용되지 않습니다. 따라서, content 를 블럭 요소로 변환을 해주어야 합니다.
+
+
+```css
+선택자:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+```
+
+clear 클래스를 미리 만들어 놓고, 다중클래스 선택자를 이용하여 사용을 하면 편리 합니다.
+
+```css
+.clear:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+```
+
+
 
 
 

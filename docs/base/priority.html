@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JinyDev CSS</title>
 
-    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -21,25 +21,53 @@
             border-bottom: 1px solid #cccccc;
         }
 
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
         .markdown-body h2 {
             padding-top: 10px;
         }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
 
         .markdown-body h3 {
             padding-top: 5px;
         }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h4 {
             padding-top: 3px;
         }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h5 {
             padding-top: 2px;
         }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h6 {
             padding-top: 1px;
         }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
 
 
 
@@ -52,9 +80,14 @@
 
 </head>
 <body>
+
     <div class="markdown-body">
         <h1 id="우선순위">우선순위</h1>
 <p>스타일시트는 첫번째 <code class="language-plaintext highlighter-rouge">C</code>는 캐스케이딩(cascading) 입니다. 이는 CSS의 값이 상속의 개념이 존재하며, 또한 그 우선순위도 있다는 것입니다.</p>
+
+<h2 id="cascading-우선적용">Cascading 우선적용</h2>
+<p>CSS는 Cascading 스타일 시트로서 cascading이란 목포라는 의미 입니다.
+css 는 폭포와 같이 우선 순위에 맞에 우선적으로 적용되기 때문입니다.</p>
 
 <h2 id="스타일은-상속됩니다">스타일은 상속됩니다.</h2>
 <p>웹 문서에서 사용하는 HTML 태그들은 서로 포함 관계를 가지고 있습니다. 즉, 하나의 테그는 다른 테그를 감싸고 있는데, 상위 테그를 부모 요소라고 하고 하위 태그를 자식 요소라고 합니다.</p>
@@ -92,5 +125,8 @@
 
 
     </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

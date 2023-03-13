@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JinyDev CSS</title>
 
-    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -21,25 +21,53 @@
             border-bottom: 1px solid #cccccc;
         }
 
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
         .markdown-body h2 {
             padding-top: 10px;
         }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
 
         .markdown-body h3 {
             padding-top: 5px;
         }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h4 {
             padding-top: 3px;
         }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h5 {
             padding-top: 2px;
         }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h6 {
             padding-top: 1px;
         }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
 
 
 
@@ -52,6 +80,7 @@
 
 </head>
 <body>
+
     <div class="markdown-body">
         <h1 id="font-속성">font 속성</h1>
 <p>글자와 관련된 스타일 속성을 의마합니다.</p>
@@ -73,7 +102,36 @@
 
 <h2 id="text-decoration-속성">text-decoration 속성</h2>
 
+<h2 id="텍스트-스타일">텍스트 스타일</h2>
+
+<h3 id="줄간격">줄간격</h3>
+<p><code class="language-plaintext highlighter-rouge">line-height</code> 속성은 여러 텍스트의 줄간격을 지정합니다.</p>
+
+<p>줄간격은 텍스트의 중심선을 기준으로 간격을 처리합니다.</p>
+
+<h3 id="들여쓰기">들여쓰기</h3>
+<p>기본값은 0 입니다.</p>
+
+<p>text-indent:10px</p>
+
+<h3 id="자간">자간</h3>
+<p>letter-spacing:0;
+기본값은 0 입니다.</p>
+
+<h3 id="꾸밈">꾸밈</h3>
+<p>text-decoration</p>
+
+<ul>
+  <li>overline</li>
+  <li>none</li>
+  <li>line-through</li>
+</ul>
+
+<p>밑줄이 있는 a 링크의 밑줄을 삭제 할때 자주 사용을 합니다.</p>
 
     </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

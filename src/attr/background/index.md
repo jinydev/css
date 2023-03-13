@@ -36,6 +36,71 @@ background-image 속성은 배경에 넣을 그림을 지정하는 스타일 속
 
 
 
+## 배경(background)
+
+### 배경이미지
+
+```css
+background-image:url(이미지);
+```
+
+
+```css
+background-repeat:no-repeat;
+```
+
+* repeat : 반복허용
+* repeat-x : 가로만 반복허용
+* repeat-y
+* no-repeat
+
+### 배경색
+```css
+background-color: 색;
+```
+
+### 배경위치 변경
+```css
+background-position:위치
+```
+
+* right
+* top
+* left
+* bottom
+* center
+
+background-position: rigth top
+background-position: rigth bottom
+background-position: center top
+
+정가운데 위치
+background-position: center
+
+숫자값으로 지정
+
+```css
+background-position: 10px 10px
+```
+죄측 상단을 기준으로 떨어진 x, y 값에 배치를 합니다.
+
+`%`를 통하여 지정할 수 있습니다.
+```css
+background-position: 10% 10%
+```
+
+한번에 정의하기
+
+`background` 속성명 뒤에 여러 값을 순차적으로 나열을 하면 됩니다.
+
+```css
+div {
+    background: url(img.png) no-repeat 20px center #ccc;
+}
+```
+
+
+
 
 
 

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="css-position">css-position</h1>
+
+<p>HTML 요소의 위치를 변경할 수 있는 position 에 대해서 학습해 보도록 하겠습니다.</p>
+
+<p>html 요소가 문서의 작성 흐름에 맞추어 배치되는 것이 아니라, 특정한 곳에 강제로 이동되거나, 고정되는 것을 볼 수 있습니다.</p>
+
+<p>이처럼 요소의 위치를 변경하고자 할때에는 position 속성을 사용합니다.</p>
+
+<h2 id="position">Position</h2>
+
+<p>position 속성은 HTML 요소를 배치하는 방법을 지정합니다.</p>
+
+<h3 id="static">static</h3>
+
+<p>static은 요소가 문서의 일반적인 흐름에 맞추어 배치가 되는 것을 말합니다.</p>
+
+<blockquote>
+  <p>static은  top, right, bottom, left 속성이 비활성화 되어 있습니다.</p>
+</blockquote>
+
+<h3 id="relative">relative</h3>
+
+<p>상대적인 의미를 뜻합니다.</p>
+
+<p>relative도 static과 동일하게 문서의 흐름에 맞추어 배치가 됩니다.</p>
+
+<p>위치이동</p>
+
+<p>relative 속성이 부여되어 있는 상태에서  top, right, bottom, left 속성이 추가적으로 부여하여 위치를 변경이 가능합니다. 이때 기준점은  자신의 위치를 기준으로 합니다.</p>
+
+<p>만일, 다른 영역과 겹치에 된다면, 위치를 벗어나서 화면에 출력이 됩니다.</p>
+
+<h3 id="absolute">absolute</h3>
+
+<p><code class="language-plaintext highlighter-rouge">absolute</code>는 문서의 흐름을 따르지 않습니다. 즉,position이 static이지 않은 부모를 기준으로 움직입니다.</p>
+
+<p>만일 부모의 요소가 relative, absolute, fixed 의 속성을 가지지 않는 경우에는 최상의 body 테그를 기준으로 위치가 결정이 됩니다.</p>
+
+<blockquote>
+  <p>div라도 absolute 속성이 부여되면, 컨덴츠의 영역만의 크기를 같게 됩니다.</p>
+</blockquote>
+
+<p>### fixed</p>
+
+<p>문서의 흐름을 따르지 않습니다. 스크린의 뷰포트(viewport)을 기준으로 한 위치에 배치가 됩니다.</p>
+
+<h3 id="sticky">sticky</h3>
+
+<p>static과 같이 일반적인 문서의 흐름을 따라 배치가 되지만, 스크롤의 임계정이 되었을때는, fix와 유사하게 고정할 수 있는 속성입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">position</span><span class="nd">:sticky</span><span class="o">;</span>
+<span class="nt">top</span><span class="o">:</span><span class="err">0</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>sticky는 right, left,bottom 속성은 적용되지 않습니다. top 속성 한개만 사용이 가능합니다.</p>
+</blockquote>
+
+<p>해더 메뉴등을 구현할때 많이 사용합니다.</p>
+
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

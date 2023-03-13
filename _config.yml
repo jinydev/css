@@ -30,3 +30,8 @@ github_username:  infohojin
 
 source: src
 destination: docs
+
+sass:
+  load_paths:
+    - _sass
+    - ../node_modules/bootstrap/scss

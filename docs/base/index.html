@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JinyDev CSS</title>
 
-    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -21,25 +21,53 @@
             border-bottom: 1px solid #cccccc;
         }
 
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
         .markdown-body h2 {
             padding-top: 10px;
         }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
 
         .markdown-body h3 {
             padding-top: 5px;
         }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h4 {
             padding-top: 3px;
         }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h5 {
             padding-top: 2px;
         }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h6 {
             padding-top: 1px;
         }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
 
 
 
@@ -52,26 +80,52 @@
 
 </head>
 <body>
-    <div class="markdown-body">
-        <h1 id="css란">CSS란</h1>
-<p>CSS는 Cascading Style sheet의 약자 입니다. 표준적인 모던 웹사이트를 제작하기 위해서는 HTML와 CSS를 같이 사용해 주어야만 합니다.</p>
-<blockquote>
-  <p>HTML이 웹 문서의 뼈대라고 한다면, CSS는 뼈대에 살과 옷을 입히는 것과 같습니다.</p>
-</blockquote>
 
-<h2 id="css란-1">CSS란</h2>
+    <div class="markdown-body">
+        <h1 id="스타일시트-기초">스타일시트 기초</h1>
+<p>HTML이 웹 문서의 뼈대라고 한다면, CSS는 뼈대에 살과 옷을 입히는 것과 같습니다. 
+표준적인 <code class="language-plaintext highlighter-rouge">모던 웹사이트</code>를 제작하기 위해서는 HTML와 CSS를 같이 사용해 주어야만 합니다.</p>
+
+<h2 id="css란">CSS란</h2>
+<p>CSS는 <code class="language-plaintext highlighter-rouge">Cascading Style sheet</code>의 약자 입니다.</p>
+
 <ul>
-  <li><a href="css">CSS란</a></li>
+  <li><a href="/base/css">CSS의 탄생</a></li>
+  <li><a href="/base/css">CSS 스타일의 목적</a></li>
+  <li>
+    <p><a href="/base/css">스타일시트 파일이란</a></p>
+  </li>
+  <li><a href="/base/version">CSS 버젼</a></li>
+  <li><a href="/base/css">CSS3</a></li>
+</ul>
+
+<h2 id="스타일의-종류">스타일의 종류</h2>
+<p>각각의 브라우저마다 다양한 UI 스타일을 가지고 있습니다.</p>
+<ul>
+  <li><a href="/base/style">브라우저 스타일</a></li>
 </ul>
 
 <h2 id="css-스타일-형식-알아보기">CSS 스타일 형식 알아보기</h2>
+<p>스타일시트의 문법과 작성방법에 대해서 알아 봅니다.</p>
+
 <ul>
   <li><a href="format">스타일형식</a></li>
 </ul>
 
-<h2 id="스타일-코드-적용">스타일 코드 적용</h2>
-<p>작성한 CSS를 적용하는 방법에 대해서 알아 봅니다.
-<a href="apply">적용</a></p>
+<h2 id="스타일-코드-적용"><a href="apply">스타일 코드 적용</a></h2>
+<p>작성한 CSS를 적용하는 방법에 대해서 알아 봅니다.</p>
+
+<ul>
+  <li><a href="apply">인라인 스타일</a> : inline</li>
+  <li><a href="apply">내부 스타일</a> : Internal</li>
+  <li><a href="apply">외부 스타일</a> : External Style Sheet</li>
+</ul>
+
+<h2 id="주석">주석</h2>
+<p>CSS 코드 안에서도 주석을 사용할 수 있습니다.</p>
+<ul>
+  <li><a href="/base/comment">css주석</a></li>
+</ul>
 
 <h2 id="스타일-우선순위">스타일 우선순위</h2>
 <p>스타일시트는 첫번째 <code class="language-plaintext highlighter-rouge">C</code>는 캐스케이딩(cascading) 입니다. 이는 CSS의 값이 상속의 개념이 존재하며, 또한 그 우선순위도 있다는 것입니다.</p>
@@ -79,6 +133,7 @@
 <ul>
   <li>스타일은 <a href="priority">상속</a>됩니다.</li>
   <li><a href="priority">우선순위</a></li>
+  <li><a href="/base/important">important</a></li>
 </ul>
 
 <h2 id="선택자">선택자</h2>
@@ -99,5 +154,8 @@ HTML 문서에는 존재하지 않지만, css에서 가상으로 요소를 추�
 
 
     </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

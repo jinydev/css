@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="important">Important</h1>
+
+<h2 id="css-적용-우선순위">CSS 적용 우선순위</h2>
+
+<p><code class="language-plaintext highlighter-rouge">사용자 !important</code> &gt; <code class="language-plaintext highlighter-rouge">제작자 important</code> &gt; 제작자 &gt; 사용자 &gt; 브라우저</p>
+
+<p>순으로 우선순위가 반영됩니다.</p>
+
+<h3 id="절대-최고값-important">절대 최고값, !important</h3>
+<p>위의 모든 우선순위를 무시하고 적용하는 초고 우선순위를 말합니다.
+우선순위를 무시합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">*</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">red</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">color</span><span class="p">:</span><span class="no">blue</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">*</code> 보다 우선순위가 높은 div 테그의 스타일이 적용되어야 하나, <code class="language-plaintext highlighter-rouge">!important</code>로 인하여 우선순위가 낮은 <code class="language-plaintext highlighter-rouge">*</code> 선택자가 적용되는 것을 확인할 수 있습니다.</p>
+
+<blockquote>
+  <p><code class="language-plaintext highlighter-rouge">!important</code>는 세미콜론 안쪽에 넣어 줍니다.</p>
+</blockquote>
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

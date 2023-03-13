@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JinyDev CSS</title>
 
-    <link rel="stylesheet" href="github-markdown.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
     <style>
         .markdown-body {
             box-sizing: border-box;
@@ -21,25 +21,53 @@
             border-bottom: 1px solid #cccccc;
         }
 
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
         .markdown-body h2 {
             padding-top: 10px;
         }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
 
         .markdown-body h3 {
             padding-top: 5px;
         }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h4 {
             padding-top: 3px;
         }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h5 {
             padding-top: 2px;
         }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
 
         .markdown-body h6 {
             padding-top: 1px;
         }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
 
 
 
@@ -52,8 +80,9 @@
 
 </head>
 <body>
+
     <div class="markdown-body">
-        <h1 id="css-적용">CSS 적용</h1>
+        <h1 id="css-적용하는-방법">CSS 적용하는 방법</h1>
 <p>작성한 CSS를 적용을 하기 위해서는 <code class="language-plaintext highlighter-rouge">html 문서</code>에 <code class="language-plaintext highlighter-rouge">삽입</code>을 하여야 합니다. <code class="language-plaintext highlighter-rouge">css</code>를 적용하는 방법은 다양하게 존재합니다.</p>
 <blockquote>
   <p>스타일 정보는 웹 문서를 브라우저 화면에 표시하기 전에 결정되어야 합니다.</p>
@@ -62,19 +91,35 @@
 <p>CSS를 적용하는 방식은 크게 3종류 입니다.</p>
 
 <h2 id="인라인-스타일">인라인 스타일</h2>
+<p>인라인 스타일은 html 테그에 style 속성값을 통하여 스타일을 적용하는 것입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;h1</span> <span class="na">style=</span><span class="s">"color:red;"</span><span class="nt">&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+</code></pre></div></div>
 
 <h2 id="내부-스타일">내부 스타일</h2>
-<p>css는 보통 <code class="language-plaintext highlighter-rouge">&lt;head&gt;&lt;/head&gt;</code> 안에 위치를 합니다. 또한 <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> 테그를 이용합니다.</p>
+<p>내부 스타일은 HTML 작성 영역과 CSS 선언 영역이 분리되어 있기 때문에, 이를 적용할 테그를 선택해 주어야 하는 <code class="language-plaintext highlighter-rouge">선택자</code>를 필요로 합니다. 선택자는 다양한 방법으로 지정을 할 수 있습니다.</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;head&gt;</span>
-    ...
-    <span class="nt">&lt;style&gt;</span>
-        <span class="o">...</span>
-    <span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
+<p><code class="language-plaintext highlighter-rouge">body</code> 영역에 HTML 코드를 작성하고, 스타일은 <code class="language-plaintext highlighter-rouge">head</code>테그 안에 <code class="language-plaintext highlighter-rouge">style</code> 테그를 통하여 스타일을 지정합니다.
+선택자를 이용하여 요소를 선택하는 경우에는, 모두 동일한 스타일이 적용 됩니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;style&gt;</span>
+            <span class="nt">h1</span> <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>Hello World<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </code></pre></div></div>
 
 <h2 id="외부-스타일">외부 스타일</h2>
+<p>문서내에 있는 스타일을 별도의 외부 파일로 분리하여 연결하는 방법입니다.</p>
+
 <p>외부 스타일시트는 문서 안에 있는 스타일 정보를 별도의 파일로 저장합니다.</p>
 <blockquote>
   <p>외부 스타일은 <code class="language-plaintext highlighter-rouge">.css</code>확장자로 지정합니다.</p>
@@ -96,7 +141,79 @@
   <p>외부 스타일시트를 파일 안에서 작성할 때에는 <code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> 태그 없이 스타일 내용만 작성합니다.</p>
 </blockquote>
 
+<blockquote>
+  <p>외부 스타일시트 파일은 <code class="language-plaintext highlighter-rouge">style</code>등의 html 테그가 필요없습니다.</p>
+</blockquote>
+
+<p>문서 밖에 선언된 스타일시트는 <code class="language-plaintext highlighter-rouge">link</code>테그를 이용하여 연결을 해주어야 합니다.</p>
+
+<p>HTML 문서의 head 영역에 다음과 같이 사용합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>외부 스타일시트를 연결할때는 파일의 경로를 잘 찾아 지정해 주어야 합니다. 절대경로 및 상대경로에 파일이 있는지 확인을 합니다.</p>
+
+<h3 id="외부-스타일의-장점">외부 스타일의 장점</h3>
+<p>스타일시트를 만들어 놓으면 여러 HTML 에서 공용적으로 사용이 가능합니다.</p>
+
+<h2 id="제작-스타일">제작 스타일</h2>
+<hr />
+<p>개발자가 스타일을 변경할 수 있는 방법은 크게 4가지가 있습니다.</p>
+
+<h3 id="인라인-스타일inline-style">인라인 스타일(inline Style)</h3>
+<p>html 요소에 직접 CSS를 지정하는 것을 말합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;p</span> <span class="na">style=</span><span class="s">"color:red"</span><span class="nt">&gt;</span>안녕하세요<span class="nt">&lt;/p&gt;</span>
+</code></pre></div></div>
+
+<h3 id="임베디드-스타일embedded-style">임베디드 스타일(Embedded Style)</h3>
+<p>html 문서의 head 영역에 삽입을 하는 스타일 적용 방식을 말합니다.
+<code class="language-plaintext highlighter-rouge">&lt;style&gt;</code> 테그를 삽입하여 스타일을 지정합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;style&gt;</span>
+            <span class="nt">p</span> <span class="p">{</span>
+                <span class="nl">color</span><span class="p">:</span><span class="no">red</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="nt">&lt;/style&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;p&gt;</span>안녕하세요<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>임베디스 스타일은 현재의 <code class="language-plaintext highlighter-rouge">작업중인 문서</code>에만 적용이 됩니다.</p>
+
+<blockquote>
+  <p>임베디스 스타일은 여러개의 웹문서를 제작할때 일괄적인 수정이 어렵다는 단점이 있습니다.
+유지보수, 운영에 어렵습니다. 페이지의 디자인을 테스트 할때 많이 사용을 합니다.</p>
+</blockquote>
+
+<h3 id="링크드-스타일linked-style">링크드 스타일(Linked Style)</h3>
+<p>별도의 스타일시트 파일(*.css)을 생성하여 링크를 영결하는 것입니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"default.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>실무에서 가장 많이 사용하는 스타일 적용방식입니다.
+외부 파일로 정의되어 있기 대문에 다수의 페이지에 일괄 수정하기 용이합니다.</p>
+</blockquote>
+
+<h3 id="삽입-스타일import-style">삽입 스타일(Import style)</h3>
+<p>css 선언안에 추가 css를 적용할때 유용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;</span><span class="nt">style</span><span class="o">&gt;</span>
+    <span class="k">@import</span> <span class="sx">url('default.css')</span><span class="p">;</span>
+<span class="o">&lt;/</span><span class="nt">style</span><span class="o">&gt;</span>
+</code></pre></div></div>
 
     </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
 </body>
 </html>

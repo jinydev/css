@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="레이아웃-스타일">레이아웃 스타일</h1>
+<p>CSS가 강력한 이유 중 하나가 웹사이트를 제작할 때 텍스트나 이미지, 표 등 웹 문서 안의 요소를 자유자재로 배치할수 있다는 것입니다. 레이아웃을 구현하기 위한 다양한 기술에 대해서 알아 보도록 합니다.</p>
+
+<h2 id="박스-모델">박스 모델</h2>
+<p>css의 박스 모델을 사용하면 텍스트 단락에서 테두리와 내용 사이에 적절하게 골간을 두어 읽기 
+쉽게 만들 수 있고, 이미지에 다양한 색상의 테두리를 추가할 수도 있습니다.</p>
+
+<ul>
+  <li><a href="/layout/box">박스모델</a></li>
+</ul>
+
+<h2 id="박스모델-속성">박스모델 속성</h2>
+<ul>
+  <li><a href="/layout/box/padding">패딩영역</a></li>
+  <li><a href="/layout/box/margin">마진영역</a></li>
+  <li><a href="/layout/box/border">테두리 영역</a></li>
+  <li><a href="/layout/box/shadow">그림자 영역</a></li>
+</ul>
+
+<h2 id="display-속성">Display 속성</h2>
+<p>Display 속성은 HTML 요소를 어떻게 처리를 할 것인지에 대해서 지정을 하는 방법입니다.</p>
+
+<ul>
+  <li><a href="/layout/display">디스플레이 속성이란?</a></li>
+</ul>
+
+<h2 id="float">Float</h2>
+<ul>
+  <li><a href="/layout/float">float 응용</a></li>
+</ul>
+
+<h2 id="position">position</h2>
+
+<ul>
+  <li><a href="/layout/position">position 학습하기</a></li>
+</ul>
+
+<h3 id="visibility-속성---요소를-보이게-하거나-보이지-않게-하기">visibility 속성 - 요소를 보이게 하거나 보이지 않게 하기</h3>
+
+<p>요소를 화면에 보이게 하거나 보이지 않게</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">visibility</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>visibility를 hidden으로 하면 화면에서 감춘 요소들은 눈 
+에 보이진 않지만, 실제로는 공간을 차지하고 있습니다.</p>
+
+<ul>
+  <li>visible : 요소를 화면에 표시합니다. 기본 값입니다.</li>
+  <li>hidden : 요소가 화면에서 감춰집니다 하지만 크기는 그대로 유지하기 때문에 배치에 영향을 줍니다.</li>
+  <li>collapse : 표의 행이나 열. 행 그룹, 열 그룹 등에서 지정하면 서로 겹치도록 조절합니다.</li>
+  <li>inherit : 부모 요소의 visibility 속성을 상속합니다</li>
+</ul>
+
+<h2 id="다단으로--편집하기">다단으로  편집하기</h2>
+<p>CSS3은 column과 관련된 여러 속성이 있습니다.</p>
+<blockquote>
+  <p>다단과 관련된 속성은 브라우저 제조업체 접두사를 붙여 사용해야 합니다.</p>
+</blockquote>
+
+<h3 id="column-width---단의-너비-지정하기">column-width - 단의 너비 지정하기</h3>
+<p>한 화면을 여러 개의 단(column)으로 구성할 때，단의 너비를 고정해 놓고 화면을 분할할 수 있습니다</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">column-width</span><span class="o">:</span> <span class="nt">속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="column-count-속성---단의-개수-지정하기">column-count 속성 - 단의 개수 지정하기</h3>
+<p>다단 화면을 만들 때 단의 개수를 먼저 정해놓고 화면을 분할할 수도 있습니다.</p>
+<blockquote>
+  <p>화면이 커질수록 단의 너비가 넓어집니다.</p>
+</blockquote>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">column-count</span><span class="o">:</span> <span class="nt">속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="column-gap-속성---단과-단-사이-여백-지정하기">column-gap 속성 - 단과 단 사이 여백 지정하기</h3>
+<p>단 사이의 여백을 지정하는 속성입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">column-gap</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="column-rule-속성---구분선의-색상스타일너비-지정하기">column-rule 속성 - 구분선의 색상，스타일，너비 지정하기</h3>
+
+<h3 id="column-span-속성---여러-단을-하나로-합치기">column-span 속성 - 여러 단을 하나로 합치기</h3>
+<p>단을 합쳐서 내용을 표시해야 할 경우</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">column_span</span><span class="o">:</span> <span class="nt">속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

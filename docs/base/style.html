@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="스타일의-종류">스타일의 종류</h1>
+
+<h2 id="출처별-css-스타일">출처별 CSS 스타일</h2>
+
+<p>CSS는 html 요소의 디자인을 결정합니다. 기본 css는 다양한 출처가 있습니다.</p>
+
+<ul>
+  <li>브라우저별 기본 스타일</li>
+  <li>브라우저 사용자 스타일</li>
+  <li>제작자 스타일 &lt;= 우리가 작성한 스타일 시</li>
+</ul>
+
+<p>즉, 출처란 스타일 규칙이 어디에서 적용한 것인지를 판별 하는 것입니다.</p>
+
+<h3 id="제작자-스타일-author-style">제작자 스타일 (Author style)</h3>
+
+<p>제작자 스타일이란 개발자가 직접 스타일을 지정하여 적용하는 것을 말합니다. 인라인스타일, 내부스타일, 외부스타일 모두 제작자 스타일을 의미합니다.</p>
+
+<h3 id="사용자-스타일-user-style">사용자 스타일 (User style)</h3>
+
+<p>사이트 이용자가 사용자 브라우저에 설정하여 변경한 디자인을 말합니다.</p>
+
+<p>예를들면) 저시력자가 글자를 멱확이 읽이 위해서 윈도우 설정에 “고대비” 기능을 적용하는 경우, 이를 반영하여 브라우저가 처리하는 스타일을 말합니다.</p>
+
+<h3 id="브라우저-스타일browser-style">브라우저 스타일(Browser Style)</h3>
+
+<p>브라우저 종류에 따라서 적용되는 스타일을 말합니다. 브라우저 종류마다 html 테그의 디자인 속성이 다르게 지정 되어 있습니다.</p>
+
+<h2 id="브라우저-접두사">브라우저 접두사</h2>
+<p>브라우저별 css를 적용하는 접두사(prefix) 입니다.</p>
+
+<ul>
+  <li>-webkit-</li>
+  <li>-moz-</li>
+  <li>-o-</li>
+  <li>-ms-</li>
+</ul>
+
+<p>브라우저를 자동으로 붙여주는 <code class="language-plaintext highlighter-rouge">prefix-free.js</code> 가 있습니다.</p>
+
+<h2 id="다양한-모양의-스타일-적용방식">다양한 모양의 스타일 적용방식</h2>
+<hr />
+<p>스타일은 모두 동일 하지 않습니다. 운영체제, 브라우저 등에 따라서 다르게 스타일이 적용되어 있습니다.</p>
+
+<h3 id="운영체제-스타일">운영체제 스타일</h3>
+<p>테스크탑 운영체제별로 다르게 적용되는 스타일을 말합니다.</p>
+
+<h3 id="브라우저-스타일">브라우저 스타일</h3>
+<p>브라우저마다 적용되는 스타일의 모양이 다르다.</p>
+
+<h3 id="사용자-스타일">사용자 스타일</h3>
+<p>사용자가 브라우저, 운영체제등의 <code class="language-plaintext highlighter-rouge">설정</code>을 직접 변경하여 적용하는 스타일을 말합니다.
+글씨의 크기를 크게 하거나, 색맹, 시각등의 장애를 가지고 있는 사람들이 많이 이용을 합니다.</p>
+
+<h3 id="제작-스타일">제작 스타일</h3>
+<p>사이트를 만드는 사람이 스타일을 변경하는 것을 말합니다.</p>
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

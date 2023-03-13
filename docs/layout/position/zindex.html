@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="z-index">Z-index</h1>
+
+<h2 id="z-index-속성">z-index 속성</h2>
+<p>요소들은 계층적으로 중첩이 되면서 배치가 됩니다.<br />
+일반적으로 화면에서 x,y 평면을 기준으로 움직인다면, 요소는 z 축을 통하여 쌓이게 됩니다.
+이러한 z축의 층간을 결정하는 요소 입니다.</p>
+
+<h2 id="z-index-1">z-index</h2>
+<p>요소가 겹쳐져 있을때 화면에 보이는 순서를 변경할 수 있습니다.</p>
+
+<p>예를 들어 여러개의 요소들이 절대값으로 인하여 동일한 위치에 있을경우
+마지막에 있는 요소만 보이게 됩니다.</p>
+
+<p>이를 순서를 변경하기 위해서는 z-index 옵션을 사용해 주어야 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">z-index</span><span class="nd">:숫자</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="z-index-속성---요소-쌓는-순서-정하기">z-index 속성 - 요소 쌓는 순서 정하기</h3>
+<p>요소를 쌓는 Z축도 고 
+려합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">z_index</span><span class="o">:</span> <span class="nt">숫자값</span><span class="o">;</span>
+</code></pre></div></div>
+<blockquote>
+  <p>웹 문서에 가장 먼저 삽입하는 요소가 z-index:1</p>
+</blockquote>
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

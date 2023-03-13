@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response Layout Media</title>
+    <style>
+        body {
+            background: #b71c1c; 
+            color: #fff;
+        }
+        h1::before {
+            content: '1. '
+        }
+        h1::after {
+            content: ' - 기본'
+        }
+
+        /* 화면 너비가 1280px 이상인 경우: 고해상도 데스크탑 */
+        @media (max-width: 1280px){
+            body {
+                background: #880e4f;
+            }
+            h1::before {
+                content: '2. '
+            }
+            h1::after {
+                content: ' - 1025px ~ 1280px'
+            }
+        }
+
+        /* 화면 너비가 1024px 이상인 경우: 데스크탑 */
+        @media (max-width: 1024px){
+            body {
+                background: #4a148c;
+            }
+            h1::before {
+                content: '3. '
+            }
+            h1::after {
+                content: ' - 961px ~ 1024px'
+            }
+        }
+
+        /* 화면 너비가 960px 이상인 경우: 노트북 */
+        @media (max-width: 960px){
+            body {
+                background: #311b92;
+            }
+            h1::before {
+                content: '4. '
+            }
+            h1::after {
+                content: ' - 769px ~ 960px'
+            }
+        }
+
+        /* 화면 너비가 768px 이상인 경우 : 타블렛 */
+        @media (max-width: 768px){
+            body {
+                background: #4a148c;
+            }
+            h1::before {
+                content: '5. '
+            }
+            h1::after {
+                content: ' - 577px ~ 768px'
+            }
+        }
+
+        /* 화면 너비가 0 ~ 576 : 모바일 */
+        @media (max-width: 576px){
+            body {
+                background: #004D40;
+            }
+            h1::before {
+                content: '6. '
+            }
+            h1::after {
+                content: ' - 0px ~ 576px'
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>반응형 미디어 쿼리</h1>
+    <p>미디어쿼리를 이용하여 화면 크기에 따른 CSS를 다르게 적용할 수 있습니다.</p>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="위치-속성">위치 속성</h1>
+<p>html 요소의 위치를 결정합니다.</p>
+
+<ul>
+  <li><a href="/layout/position/zindex">z-index</a></li>
+  <li><a href="/layout/position/overflow">overflow</a></li>
+</ul>
+
+<h2 id="좌표-체계">좌표 체계</h2>
+<p>HTML의 요소를 배치하는 위치는 크게 <code class="language-plaintext highlighter-rouge">절대위치</code>와 <code class="language-plaintext highlighter-rouge">상대위치</code>가 있습니다.</p>
+
+<ul>
+  <li>절대 위치 좌표: 요소의 X 좌표와 Y 조十포를 설정해 절다 워치를 지정합니다.</li>
+  <li>상태 위치 좌표 : 요소를 입력한 순서를 통해 상대적으로 워치를 지정합니다</li>
+</ul>
+
+<p>대부분 요소를 배치할 때는 상대 위치 좌표를 사용해 페이지를 만듭니다. 하지만, 사이트를 제작하다 보면 특별한 위치에 요소를 배치하거나 고정해야 되는 경우도 발 생합니다. 이때, 위치 속성을 이용하여 요소를 배치할 수 있습니다.</p>
+
+<h2 id="position-속성">position 속성</h2>
+<p>태그의 위치 설정 방법을 변경 할 때는 <code class="language-plaintext highlighter-rouge">position</code> 속성을 사용합니다.</p>
+
+<h3 id="static">static</h3>
+<p>기본적으로 위치의 속석은 <code class="language-plaintext highlighter-rouge">static</code>입니다. static 키워드를 적용하면 태그가 “위에서 아래로”와 ‘‘왼쪽에서 오른쪽으로” 순서에 맞게 배치
+됩니다(direction 속성을사용해 “오른쪽에서 왼쪽”으로 변경할수 있습니다).</p>
+
+<h3 id="relative">relative</h3>
+<p>relative 키워드를 적용하면 static 키워드로 초기 위치가 지정된 상태에서 상하죄우로 이동할 수 있습니댜</p>
+
+<h3 id="absolute">absolute</h3>
+<p>절대 위치 좌표를 사용할 때는 position 속성에 absolute 키워드를 지정합니다.</p>
+<blockquote>
+  <p>fixed와의 차이점은 기준점으로 부터 절대 좌표가 결정됩니다.</p>
+</blockquote>
+
+<h3 id="fixed">fixed</h3>
+<p>절대 위치 좌표를 사용할 때는 fixed 키워드를적용합니다.</p>
+<blockquote>
+  <p>absolute와의 차이점은 화면을 기준으로 절대 위치 좌표를 설정합니다.</p>
+</blockquote>
+
+<h2 id="position">position</h2>
+<p>요소의 위치를 이동합니다.</p>
+
+<h3 id="static-1">static</h3>
+<p>기본값으로 요소의 좌표를 이동할 수 없습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">static</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>객체의 위치를 초기화 할때 사용합니다.</p>
+
+<h3 id="relative-1">relative</h3>
+<p>요소를 상대적 위치로 이동을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: relative01.html
+relative 속성이 부여되었다고 해서 현재의 위치에 아무런 변화가 없습니다.</p>
+</blockquote>
+
+<h3 id="위치이동">위치이동</h3>
+<p>요소의 위치속성을 relative로 설정한 후에는 좌표의 이동이 같이 해주어야 합니다.
+위치의 이동은 상하좌우 4방향으로 이동을 할 수 있습니다.</p>
+<ul>
+  <li>top</li>
+  <li>left</li>
+  <li>right</li>
+  <li>bottom</li>
+</ul>
+
+<blockquote>
+  <p>예제코드: relative02.html</p>
+</blockquote>
+
+<p><code class="language-plaintext highlighter-rouge">기존의 위치</code>로 부터 이동을 합니다.</p>
+
+<blockquote>
+  <p>위치이동은 상위 요소가 position 속성값이 없는 상태에서는
+적용이 되지 않습니다.</p>
+</blockquote>
+
+<h3 id="absolute-1">absolute</h3>
+<p>절대위치로 요소를 이동합니다.
+만일, 절대위치를 적요한 요소의 상위요소가 relative가 되면,
+relative 요소를 부모로 하여 기준좌표가 변경이 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>예제코드: absolute01.html</p>
+</blockquote>
+
+<p>절대좌표가 적용되면, 요소는 레이어와 같이 중간에 뜬 상태가 됩니다.
+따라서 위의 <code class="language-plaintext highlighter-rouge">~</code>과 아래 <code class="language-plaintext highlighter-rouge">~</code>이 같이 붙여져서 표현을 하게 되고.</p>
+
+<p>위치를 이동할 수 있습니다.
+기준점은 <code class="language-plaintext highlighter-rouge">브라우저</code>의 상단 좌측 입니다.</p>
+
+<h3 id="fixed-1">fixed</h3>
+<p>요소를 브라우저의 특정위치에 고장하는 것을 말합니다.</p>
+
+<p>relative와 absolute는 웹페이지를 기준으로 배치를 합니다.
+반면에 fixed는 모니터의 브라우저 화면을 기준으로 고정배치를 합니다.</p>
+
+<h2 id="상호관계">상호관계</h2>
+<p>relative와 absolute 와의 관계를 실습합니다.</p>
+
+<blockquote>
+  <p>예제코드: position41.html</p>
+</blockquote>
+
+<p>absolute 속성을 이용하여 위츠를 이동해 봅니다.</p>
+<blockquote>
+  <p>예제코드: position42.html</p>
+</blockquote>
+
+<p>브라우저의 기준으로 파란색 박스가 이동한 것을 볼 수 있습니다.</p>
+
+<p>상위 div 요소에 relative 속성을 부여합니다.</p>
+<blockquote>
+  <p>예제코드: position43.html</p>
+</blockquote>
+
+<p>바디 요소의 설정많큼 박스가 움직이게 됩니다.
+상위 박스가 relative가 되면, 하위 absolute의 기준점은 상위 박스가 됩니다.</p>
+
+<p><br /></p>
+
+<h2 id="여러--요소를--원하는--형태로--배치하기">여러  요소를  원하는  형태로  배치하기</h2>
+<p>요소들을 원하는 형태로 배치하기 위해 가장 중요한 것이 포지셔닝(positioning) 개념</p>
+
+<h3 id="position-속성---원하는-형태로-요소-배치하기">position 속성 - 원하는 형태로 요소 배치하기</h3>
+<p>position 속성은 웹 문서 안의 요소들을 자유자재로 배치해 주는 속성</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">position</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>static : 요소를 문서의 흐름에 맞춰 배치합니다.</li>
+  <li>relative : 이전 요소에 자연스럽게 연결해서 배치합니다.</li>
+  <li>absolute : 원하는 위치를 지정하여 배치합니다</li>
+  <li>fixed : 지정한 위치에 고정해서 배치합니다. 요소가 화면에서 잘릴 수도 있습니다</li>
+</ul>
+
+<h4 id="positionstatic-속성---문서의-흐름대로-배치하기">position：static 속성 - 문서의 흐름대로 배치하기</h4>
+
+<blockquote>
+  <p>position：static 속성을 사용할 경우 left나 top 속성을 사용해서 요소의 위치를 임의대로 지정할 수없습니다.</p>
+</blockquote>
+
+<h4 id="positionrelative-속성---자연스럽게-배치하기">position：relative 속성 - 자연스럽게 배치하기</h4>
+<p>요소가 나타나야 하는 위치를 기준으로 상대적인 위치를 말합니다.</p>
+<blockquote>
+  <p>left나 top 속성을이용해 요소의 위치를옮길 수도 있습니다.</p>
+</blockquote>
+
+<h4 id="positionabsolute-속성---원하는-위치에-배치하기">position：absolute 속성 - 원하는 위치에 배치하기</h4>
+<p>문서 의 흐름과는 상관없이 left와 right, top, bottom 속성을 
+이용해 원하는 위치에 요소를 배치할 수 있습니다.</p>
+
+<h4 id="positionfixed-속성---고정시키기">position：fixed 속성 - 고정시키기</h4>
+<p>position:fixed로 지정하면 일부 장치에서 요소가 지정한 위치에 고정되어 버립니다.</p>
+
+<blockquote>
+  <p>문서에서 요소의 위치는 position:absolute에서와 똑같이 계산</p>
+</blockquote>
+
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

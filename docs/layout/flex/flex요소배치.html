@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <p>flex에서 요소를 오른쪽으로 배치하고자 할 때
+margin-left:auto
+로 하면 오른쪽에 있는 여백이 왼쪽으로 이동하게 됩니다.</p>
+
+<p>Flex 박스내의 요소 양쪽 정렬하기</p>
+
+<p>마진 속성을 이용합니다.
+Margin-left:auto;</p>
+
+<p>Flex에서는 요소를 양쪽으로 정렬을 하기 위한 between 이라는 속성값이 있지만, 이는 내부 요소가 3개 이상일때는 가운데에도 요소가 같이 정렬이 되기 때문에 – 추천하지 않는다.</p>
+
+<p>auto 값은 자동으로 영역의 크기를 계산하여 적용됨</p>
+
+<h2 id="flexbox-정렬">Flexbox 정렬</h2>
+<p>Flex 박스내의 요소 양쪽 정렬하기</p>
+
+<p>마진 속성을 이용합니다.
+Margin-left:auto;</p>
+
+<p>Flex에서는 요소를 양쪽으로 정렬을 하기 위한 between 이라는 속성값이 있지만, 이는 내부 요소가 3개 이상일때는 가운데에도 요소가 같이 정렬이 되기 때문에 – 추천하지 않는다.</p>
+
+<p>auto 값은 자동으로 영역의 크기를 계산하여 적용됨</p>
+
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

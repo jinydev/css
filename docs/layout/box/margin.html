@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="마진영역-설정">마진영역 설정</h1>
+
+<h2 id="margin">Margin</h2>
+
+<p>테두리 밖같쪽의 이웃하고 있는 다른 요소들과의 간격들 말합니다.</p>
+
+<h3 id="전체마진">전체마진</h3>
+
+<p>전체 고르게 마진이 적용됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">margin</span> <span class="o">:</span> <span class="err">15</span><span class="nt">px</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="분리하여-적용">분리하여 적용</h3>
+
+<p>마진을 상/하/좌/우 를 분리하여 적용하고자 할때에는 확장된 속성값을 사용합니다.</p>
+
+<ul>
+  <li>margin-top</li>
+  <li>margin-bottom</li>
+  <li>margin-left</li>
+  <li>margin-right</li>
+</ul>
+
+<p>각각지정</p>
+
+<p><code class="language-plaintext highlighter-rouge">margin</code> 속성에 값을 4개를 주어 상, 우, 하 , 좌 를 구분하여 입력이 가능합니다. 시계방향으로 마진이 주어지게 됩니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">margin</span> <span class="o">:</span> <span class="nt">상</span> <span class="nt">우</span> <span class="nt">하</span> <span class="nt">좌</span> <span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="margin-속성----요소--주변---여백---설정하기">margin 속성  - 요소  주변   여백   설정하기</h3>
+<p>마진 속성은 박스의 상하좌우 4개의 면을 가지고 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">margin-top</span><span class="nd">:속성</span>   <span class="nt">값</span><span class="o">;</span>
+<span class="nt">margin-right</span><span class="o">:</span> <span class="nt">속성</span>   <span class="nt">값</span>
+<span class="nt">margin-bottom</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+<span class="nt">margin-left</span><span class="nd">:속성</span>   <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>또한 4개의 값을 한번에 지정할 수도 있습니다.</p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">margin</span><span class="nd">:속성값</span><span class="o">;</span>
+</code></pre></div></div>
+<blockquote>
+  <p>위쪽 마진，오른쪽 마진，아래쪽 마진，왼쪽 마진을 설정</p>
+</blockquote>
+
+<ul>
+  <li>크기 : 너비나  높이   값을  px（픽셀）수치로  지정합니다</li>
+  <li>백분율(%) : 박스 모델을 포함하고 있는 부모 요소를 기준으로 너비나 높이 값을 %로 지정합니다.</li>
+  <li>auto : 박스 모델의 너비와 높이 값 콘텐츠 양에 따라 자동으로 결정됩니다. 기본 값입니다.</li>
+</ul>
+
+<h3 id="마진-중첩">마진 중첩</h3>
+
+<p>요소가 세로로 배치가 될 경우 위쪽 요소의 하단 마진과, 아래쪽 요소의 상단 마진이 겹쳐질때, 값이 큰값이 하나만 적용된는 것을 마진 중첩이라 합니다. 마진 중첩은 가로로 배치될때에는 일어나지 않고, 세로 배치 할때만 발생합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.box1</span> <span class="p">{</span>
+        <span class="nl">margin</span><span class="p">:</span><span class="m">10px</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.box2</span> <span class="p">{</span>
+    	<span class="nl">margin</span><span class="p">:</span><span class="m">20px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box1"</span><span class="nt">&gt;</span>
+    Box1
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"box2"</span><span class="nt">&gt;</span>
+    box2
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>box1과 box2 의 마진 여백이 10+20 = 30 px이 아닌 box2이 마진 20px만 적용됩니다.</p>
+
+<h3 id="네거티브-마진">네거티브 마진</h3>
+
+<p>마진은 패딩과 달리 음수의 값 설정이 가능합니다. 이를 다른 용어로 네거티브 마진이라고도 합니다.</p>
+
+<p>네거티브 마진을 설정하게 되면 다른 요소들과 마진 영역이 겹치는 효과가 발생합니다.</p>
+
+<h2 id="중앙정렬">중앙정렬</h2>
+<p>넓이의 설정값 과 마진설정을 <code class="language-plaintext highlighter-rouge">0 auto</code>로 설정을 합니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.container {
+    width: 960px;
+    margin: 0 auto;
+}
+</code></pre></div></div>
+
+<p>실습 ex/layout2.html</p>
+
+<h3 id="마진">마진</h3>
+<p>바깥쪽 여백을 의미합니다.</p>
+
+<ul>
+  <li>
+    <p>1개 : 전체</p>
+  </li>
+  <li>
+    <p>2개 : 상하/좌우</p>
+  </li>
+  <li>
+    <p>3개 : 상 / 좌우 / 하</p>
+  </li>
+  <li>
+    <p>4개 : 위쪽 / 오른쪽 / 하단 / 왼쪽</p>
+  </li>
+</ul>
+
+<h4 id="한방향-설정">한방향 설정</h4>
+<p>margin-top
+margin-bottom
+margin-left
+margin-right</p>
+
+<h2 id="margin-0-auto">margin: 0 auto</h2>
+<p><code class="language-plaintext highlighter-rouge">블록요소</code>의 성격을 가지는 요소를 중앙에 배치할때 사용을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">div</span> <span class="p">{</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

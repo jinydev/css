@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="css-transition">CSS-transition</h1>
+
+<p>transition의 사전적 의미는 “전환”입니다. transition은 속성 값이 변화 될때 더욱더 부드럽게 전환이 가능하도록 도와주는 속성이라 할 수 있습니다.</p>
+
+<h2 id="시간에-따른-변화를-만들어-주는-트랜지션">시간에 따른 변화를 만들어 주는 트랜지션</h2>
+<p>트랜지션(transition)이란 한 스타일에서 다른 스타일로 바뀌는 것을 말합니다.</p>
+
+<p>플래시나 자바스크립트 
+를 사용하지 않고 CSS 소스만으로 애니메이션 효과를 내는 방법에 대해 알아봅니다.</p>
+
+<h3 id="transition-property-속성---적용할-트랜지션-지정하기">transition-property 속성 - 적용할 트랜지션 지정하기</h3>
+<p>트랜지션 효과를 만드는 첫 번째 단계는 CSS 속성 중 어떤 속성에 트랜지션을 적용할 것인지 선택 
+하는 것입니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-property</span><span class="nd">:속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>none : 트랜지션 동안 아무 속성도 바뀌지 않습니다.</p>
+  </li>
+  <li>
+    <p>all : all 값을 사용하거나 transition-property를 생략할 경우 요소의 모든 속성이 트랜지션 대상이 됩니 
+다. 기본 값입니다.</p>
+  </li>
+  <li>
+    <p>속성이름 : 트랜지션 효과를 적용할 속성 이름을 지정합니다. 예를 들어. 배경색만 바꿀 것인자 width 값을 바 
+꿀 것인지 원하는 것만 골라 지정할 수 있습니다. 속성이 여럿일 경우 쉼표0로 구분하여 나열합니다.</p>
+  </li>
+</ul>
+
+<h3 id="transition-duration-속성---트랜지션-진행-시간-지정하기">transition-duration 속성 - 트랜지션 진행 시간 지정하기</h3>
+<p>트랜지션이 진행될 시간을 지정합니다.
+속성이 여럿이라면 트랜지션 진행 시간도 쉼 
+표(,)로 구분하여 순서대로 여러 개 지정할수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-duration</span> <span class="o">:</span> <span class="nt">시간</span><span class="err">；</span>
+</code></pre></div></div>
+<blockquote>
+  <p>시간 단위는 초(seconds) 또는 밀리초(milliseconds)입니다.</p>
+</blockquote>
+
+<h3 id="transition-timing-function-속성---트랜지션-형태-선택하기">transition-timing-^function 속성 - 트랜지션 형태 선택하기</h3>
+<p>트랜지션 효과의 시작과 중간, 그리고 끝에서의 속도 곡선을 
+선택합니다</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-timing-function</span><span class="o">:</span> <span class="nt">속성</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<ul>
+  <li>linear : 시작에서 끝까지 똑같은 속도로 트랜지션을 진행합니다.</li>
+  <li>ease : 처음에는 천천히 시작하고 점점 빨라지다가 마지막엔 천천히 끝냅니다. 기본 값입니다.</li>
+  <li>ease-in : 트랜지션 시작을 느리게 합니다.</li>
+  <li>ease-out : 트랜지션을 느리게 끝냅니다.</li>
+  <li>
+    <p>ease-in-out : 느리게 시작하고 느리게 끝냅니다</p>
+  </li>
+  <li>cubic-bezier(n,n,n,n) : 직접 베지에 함수를 정의해서 사용합니다. 시에서 사용할 수 있는 값은 0에서 1   사이입니다.</li>
+</ul>
+
+<h3 id="transition-delay-속성---지연-시간-설정하기">transition-delay 속성 - 지연 시간 설정하기</h3>
+<p>효과를 언제부터 시작할 것인지 정하는 지연 시간을 설정</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-delay</span><span class="o">:</span> <span class="nt">시간</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h3 id="transition-속성---트랜지션-속성-한꺼번에-표기하기">transition 속성 - 트랜지션 속성 한꺼번에 표기하기</h3>
+<p>transition ■속성을 시’용하면 transtion-property오］” transition-duration, transition-timing- 
+function, transition-delay 속성을한줄로 표기할수 있습니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="nd">:property</span> <span class="nt">값</span> <span class="o">|</span>        <span class="nt">duration</span> <span class="nt">값</span> <span class="o">|</span>        <span class="nt">timing-function</span> <span class="nt">값</span> <span class="o">|</span>         <span class="nt">delay</span> <span class="nt">값</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="transition-속성">transition 속성</h2>
+
+<p>transition이 적용되는 부모요소에 적용합니다.</p>
+
+<h3 id="transition-property">Transition-property</h3>
+
+<p>어떤 속성에 트랜지션 효과를 줄 것인지를 지정합니다.</p>
+
+<ul>
+  <li>transition-property: 속성1, 속성2; 와 같이 저장합니다.</li>
+  <li>all 모든 속성을 지정합니다.</li>
+  <li>none : 아무것도 지정하지 않습니다.</li>
+</ul>
+
+<h3 id="transition-duration">transition-duration</h3>
+
+<p>트랜지션 효과를 몇 초 동안 실행할 것인지를 지정합니다.</p>
+
+<h3 id="transition-delay">transition-delay</h3>
+
+<p>지정한 초 만큼 기다렸다가 실행할 때 사용합니다.</p>
+
+<h3 id="transition-timing-function">transition-timing-function</h3>
+
+<p>트랜지션이 시작하면서 끝날때의 타이밍, 즉 속도를 지저아는 것입니다.</p>
+
+<ul>
+  <li>linear</li>
+  <li>ease-in</li>
+  <li>ease-out</li>
+</ul>
+
+<h3 id="transition">transition</h3>
+
+<p>단축속성으로 여러 값을 한번에 설정합니다.</p>
+
+<blockquote>
+  <p>CSS3</p>
+  <h2 id="transition-1">transition</h2>
+  <p>CSS에서 움직이는 표현을 처리하는 기술로 animation과 transition 이 있습니다.</p>
+</blockquote>
+
+<h2 id="동작조건">동작조건</h2>
+<p>transition 을 처리하기 위해서는 특수한 조건이 필요 합니다.</p>
+
+<h2 id="설정위치">설정위치</h2>
+<p>transition 동작 조건의 이전단계에 설정을 해야 합니다.</p>
+
+<h2 id="transition-property-1">transition-property</h2>
+<p>적용하고자 하는 transition 효과를 제한합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-property</span><span class="o">:</span> <span class="nt">border-radius</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>여러개의 효과를 허용하기 위해서는 <code class="language-plaintext highlighter-rouge">콤마</code>로 구분합니다.</p>
+
+<h2 id="transition-duration-1">transition-duration</h2>
+<p>효과를 적용하는 시간</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-duration</span><span class="o">:</span> <span class="err">2</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>transition은 시작할때도 적용되지만, 반대 동작에도 적용됩니다.</p>
+
+<h2 id="transition-delay-1">transition-delay</h2>
+<p>transition 동작을 일정한 시간동안 지연시킨 다음에 시작을 합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition-delay</span><span class="o">:</span> <span class="err">0</span><span class="o">.</span><span class="err">5</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="tansition-timing-function">tansition-timing-function</h2>
+<p>동작하는 효과를 지정할 수 있습니다.</p>
+
+<p>부드러운 동작을 처리할 수 있습니다.</p>
+<ul>
+  <li>ease</li>
+  <li>ease-in</li>
+  <li>ease-out</li>
+</ul>
+
+<h2 id="잛게-표현">잛게 표현</h2>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">background</span> <span class="err">2</span><span class="nt">s</span> <span class="err">05</span><span class="nt">s</span> <span class="nt">ease</span><span class="o">;</span>
+</code></pre></div></div>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">background</span> <span class="err">2</span><span class="nt">s</span> <span class="err">05</span><span class="nt">s</span> <span class="nt">ease</span><span class="o">,</span> <span class="nt">border-radius</span> <span class="err">3</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h2 id="all">all</h2>
+<p>모든 효과를 허용합니다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">transition</span><span class="o">:</span> <span class="nt">all</span> <span class="o">.</span><span class="err">5</span><span class="nt">s</span><span class="o">;</span>
+</code></pre></div></div>
+
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>

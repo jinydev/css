@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="Ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JinyDev CSS</title>
+
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <style>
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        .markdown-body h1 {
+            padding-bottom: 5px;
+            border-bottom: 1px solid #cccccc;
+        }
+
+        .markdown-body h1 a {
+            text-decoration: none;
+        }       
+
+
+        .markdown-body h2 {
+            padding-top: 10px;
+        }
+        .markdown-body h2 a {
+            text-decoration: none;
+            color: black;
+        } 
+        .markdown-body h2 a:hover::after {
+            content: "more";
+            font-size: 1rem;
+            padding-left: 10px;
+        }
+
+
+
+        .markdown-body h3 {
+            padding-top: 5px;
+        }
+        .markdown-body h3 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h4 {
+            padding-top: 3px;
+        }
+        .markdown-body h4 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h5 {
+            padding-top: 2px;
+        }
+        .markdown-body h5 a {
+            text-decoration: none;
+        } 
+
+        .markdown-body h6 {
+            padding-top: 1px;
+        }
+        .markdown-body h6 a {
+            text-decoration: none;
+        } 
+
+
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="markdown-body">
+        <h1 id="뷰포트">뷰포트</h1>
+<p>접속한 기기의 정보를 브라우저에게 전달합니다.</p>
+
+<p>뷰포트(View cwport)는 화면에 보이는 영역을 제어하는 기술 데스크톱은 사용자가 지정한 해상도에 따라보이는 영역이 결정 스마트 기기의 보이는 영역을 기기의 실제 화면 크기로 변경하여 미디어 쿼리가기기의 화면 크기를 정확하게 갑지할수 있도록하기 위해 뷰포트라는 기술을 이용합니다.</p>
+
+<h2 id="뷰포트를-사용해야-하는-이유">뷰포트를 사용해야 하는 이유?</h2>
+<p>사이트에 접속하는 방법은 매우 다양합니다. PC및 모바일 기기등 다양한 장치로 사이트에 접속을 합니다. 하지만, 접속 기기들 마다 화면의 사이즈는 매우 다양합니다.</p>
+
+<p>휴대폰의 제조사 및 종류마다 화면의 해상도와 크기가 다릅니다. 또한, 타블릿의 등장으로 10인치, 11인치, 12인치등 수많은 종류의 사이즈가 존재합니다. 
+PC 또한 연결된 모니터의 크기와 해상도에 따라 보여지는 방법이 틀립니다.</p>
+
+<p>반응형 웹은 <code class="language-plaintext highlighter-rouge">뷰포트</code>라는 메타 테그를 이용하여 접속한 기기의 화면 정보를 읽어 올 수 있습니다.</p>
+
+<h2 id="뷰포트-지정-방법">뷰포트 지정 방법</h2>
+<p>뷰포트는 HTML의 <code class="language-plaintext highlighter-rouge">meta</code>테그를 이용하여 설정합니다. 메타 테그는 HTML 페이지가 브라우저에게 전달되는 정보중의 하나로 <code class="language-plaintext highlighter-rouge">head</code>영역안에 작성을 합니다.</p>
+
+<p>메타 테그를 작성하는 방법은 다음과 같습니다:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"속성1=값1, 속성2=값2, ..."</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="뷰포트-태그-속성">뷰포트 태그 속성</h2>
+<p>다양한 뷰포트 동작 방법을 설정합니다.</p>
+
+<ul>
+  <li>width=divice-width : 디바이스의 크기로 가로 사이지를 지정합니다.</li>
+  <li>height</li>
+  <li>user-scaleable : 사용자가 학대/축소 가능 여부(no, yes)</li>
+  <li>
+    <p>initial-scale=1.0</p>
+  </li>
+  <li>maximum-scale</li>
+  <li>minimun-scale</li>
+</ul>
+
+<h2 id="화면의-보이는-영역을-다루는-기술-뷰포트">화면의 보이는 영역을 다루는 기술, 뷰포트</h2>
+
+<p>데스크톱은 사용자가 설정한 해상도가 뷰포트 영역이 되고, 스마트 기기는 기본으로 설정되어 였는 값이 뷰포트 영역이 됩니다.
+뷰포트 메타 태그를 이용해서 화면의 크기나배율을 조절해야합니다</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">name= </span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width =device-width , initial-scale=1, minimum-scale=1, 
+maximum-scale=1, user-scalable=no"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p>뷰포트속성</p>
+<ul>
+  <li>width : devi ce - width. 앙수</li>
+  <li>
+    <p>height : devi ce height. ~상수</p>
+  </li>
+  <li>
+    <p>initial-scale : 뷰포트의 초기 배율을 지성합니다
+기본값은 1 입니다. 1 보다 작은 값을 사용하면 축소된 패이지를 표시
+하고. 1 보다 큰 값을 사용하면 확대된 1I1IO IXI 를 표시합니다</p>
+  </li>
+  <li>
+    <p>user-scalable
+뷰포트의 확대/축소 여부를 지정합니다.</p>
+  </li>
+  <li>
+    <p>minimum-scale
+뷰포트의 최소 축소 비율을 지정합니다.</p>
+  </li>
+  <li>maximum-scale
+뷰포트의 최대 확대 비율을 지정합니다.</li>
+</ul>
+
+<h3 id="뷰포트-테스트">뷰포트 테스트</h3>
+<p>뷰포트를 테스트하기 위하여 다양한 화면의 기기 장비들로 접속을 해봐야 합니다. 하지만, 이런한 실제 접속 테스트는 불가능합니다.</p>
+
+<p>우리가 설치한 크롬 브라우저는 개발자 도구를 통하여 접속기기의 화면 사이즈를 변경해 볼 수 있습니다.</p>
+
+<h3 id="뷰포트-단위">뷰포트 단위</h3>
+<p>뷰포트가 적용되면, 다음과 같은 단위를 CSS에서 사용이 가능합니다.</p>
+
+<ul>
+  <li>vw : view port 너비</li>
+  <li>vh : view port 높이</li>
+  <li>vmin : 뷰포트 너비와 높이 중에서 작은값</li>
+  <li>vmax : 뷰포트 너비와 높이 중에서 큰값</li>
+</ul>
+
+
+    </div>    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
+</html>
