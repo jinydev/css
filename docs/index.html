@@ -1,92 +1,317 @@
-<!DOCTYPE html>
-<html lang="Ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JinyDev CSS</title>
 
-    <link rel="stylesheet" href="/assets/css/styles.css">
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jiny linux">
+    <meta name="author" content="HojinLee">
+
+    <title>웹 디자인을 위한 CSS - </title>
+    <meta name="title" content="" />
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<meta name="generator" content="Jekyll v4.3.2" />
+<meta property="og:title" content="Jiny-Css" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jiny Study." />
+<meta property="og:description" content="Jiny Study." />
+<link rel="canonical" href="https://css.jiny.dev/" />
+<meta property="og:url" content="https://css.jiny.dev/" />
+<meta property="og:site_name" content="Jiny-Css" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jiny-Css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Jiny Study.","headline":"Jiny-Css","name":"Jiny-Css","url":"https://css.jiny.dev/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/css/docs.css" rel="stylesheet" />
+
     <style>
-        .markdown-body {
-            box-sizing: border-box;
-            min-width: 200px;
-            max-width: 980px;
-            margin: 0 auto;
-            padding: 45px;
-        }
+      h1 a {
+        text-decoration: none;
+      }
 
-        .markdown-body h1 {
-            padding-bottom: 5px;
-            border-bottom: 1px solid #cccccc;
-        }
+      h2 a {
+        text-decoration: none;
+      }
 
-        .markdown-body h1 a {
-            text-decoration: none;
-        }       
+      h3 a {
+        text-decoration: none;
+      }
 
+      h4 a {
+        text-decoration: none;
+      }
 
-        .markdown-body h2 {
-            padding-top: 10px;
-        }
-        .markdown-body h2 a {
-            text-decoration: none;
-            color: black;
-        } 
-        .markdown-body h2 a:hover::after {
-            content: "more";
-            font-size: 1rem;
-            padding-left: 10px;
-        }
+      h5 a {
+        text-decoration: none;
+      }
 
+      h6 a {
+        text-decoration: none;
+      }
 
+      img {
+        width: 100%;
+        vertical-align:top
+      }
 
-        .markdown-body h3 {
-            padding-top: 5px;
-        }
-        .markdown-body h3 a {
-            text-decoration: none;
-        } 
+      strong a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-        .markdown-body h4 {
-            padding-top: 3px;
-        }
-        .markdown-body h4 a {
-            text-decoration: none;
-        } 
+      /* 스크롤바 커스텀 */
+      /* 임의의 영역 생성 */
+      .scrollBar { 
 
-        .markdown-body h5 {
-            padding-top: 2px;
-        }
-        .markdown-body h5 a {
-            text-decoration: none;
-        } 
+      }
 
-        .markdown-body h6 {
-            padding-top: 1px;
-        }
-        .markdown-body h6 a {
-            text-decoration: none;
-        } 
+      /* 아래의 모든 코드는 영역::코드로 사용 */
+      .scrollBar::-webkit-scrollbar {
+          width: 7px;  /* 스크롤바의 너비 */
+      }
 
+      .scrollBar::-webkit-scrollbar-thumb {
+          height: 30%; /* 스크롤바의 길이 */
+          background: #cccccc; /* 스크롤바의 색상 */
+          
+          border-radius: 5px;
+      }
 
+      .scrollBar::-webkit-scrollbar-track {
+          background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+      }
 
-        @media (max-width: 767px) {
-            .markdown-body {
-                padding: 15px;
-            }
-        }
     </style>
 
-</head>
-<body>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R4VBPCT3CR"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-    <div class="markdown-body">
-        <h1 id="웹-디자인을-위한-css">웹 디자인을 위한 CSS</h1>
+      gtag('config', 'G-R4VBPCT3CR');
+    </script>
+
+    <!-- 구글 에드센스 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+    crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header class="navbar navbar-expand-lg bd-navbar sticky-top">
+    <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap" aria-label="Main navigation">
+        <div class="bd-navbar-toggle">
+            <button class="navbar-toggler p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebar"
+                aria-controls="bdSidebar" aria-label="Toggle docs navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="currentColor"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z">
+                    </path>
+                </svg>
+
+                <span class="d-none fs-6 pe-1">Browse</span>
+            </button>
+        </div>
+
+        <!-- 로고, 모바일시 가운데 정렬 -->
+        <a class="navbar-brand p-0 me-0 me-lg-2" href="/" aria-label="jinydev">
+            Home
+        </a>
+
+        <!-- 모바일 좌측메뉴 mobile-right -->
+        <div class="d-flex">
+    <button class="navbar-toggler d-flex d-lg-none order-3 p-2" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#bdNavbar" aria-controls="bdNavbar" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+        </svg>
+    </button>
+</div>
+
+<div class="offcanvas-lg offcanvas-end flex-grow-1" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel" data-bs-scroll="true">
+
+    <div class="offcanvas-header px-4 pb-0">
+    <h5 class="offcanvas-title text-white" id="bdNavbarOffcanvasLabel">JinyDev</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"
+        data-bs-target="#bdNavbar">
+    </button>
+</div>
+
+<div class="offcanvas-body p-4 pt-0 p-lg-0">
+    <hr class="d-lg-none text-white-50">
+
+    <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+        <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2 active" aria-current="true"
+                href="https://html.jiny.dev">HTML</a>
+        </li>
+        <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2 " aria-current="true"
+                href="https://css.jiny.dev"
+                >CSS</a>
+        </li>
+        <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2 " aria-current="true"
+                href="https://javascript.jiny.dev"
+                >Javascript</a>
+        </li>
+    </ul>
+    
+    <hr class="d-lg-none text-white-50">
+
+    <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+        <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/jinydev/linux" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="navbar-nav-svg"
+                    viewBox="0 0 512 499.36" role="img">
+                    <title>GitHub</title>
+                    <path fill="currentColor" fill-rule="evenodd"
+                        d="M256 0C114.64 0 0 114.61 0 256c0 113.09 73.34 209 175.08 242.9 12.8 2.35 17.47-5.56 17.47-12.34 0-6.08-.22-22.18-.35-43.54-71.2 15.49-86.2-34.34-86.2-34.34-11.64-29.57-28.42-37.45-28.42-37.45-23.27-15.84 1.73-15.55 1.73-15.55 25.69 1.81 39.21 26.38 39.21 26.38 22.84 39.12 59.92 27.82 74.5 21.27 2.33-16.54 8.94-27.82 16.25-34.22-56.84-6.43-116.6-28.43-116.6-126.49 0-27.95 10-50.8 26.35-68.69-2.63-6.48-11.42-32.5 2.51-67.75 0 0 21.49-6.88 70.4 26.24a242.65 242.65 0 0 1 128.18 0c48.87-33.13 70.33-26.24 70.33-26.24 14 35.25 5.18 61.27 2.55 67.75 16.41 17.9 26.31 40.75 26.31 68.69 0 98.35-59.85 120-116.88 126.32 9.19 7.9 17.38 23.53 17.38 47.41 0 34.22-.31 61.83-.31 70.23 0 6.85 4.61 14.81 17.6 12.31C438.72 464.97 512 369.08 512 256.02 512 114.62 397.37 0 256 0z">
+                    </path>
+                </svg>
+                <small class="d-lg-none ms-2">GitHub</small>
+            </a>
+        </li>
+
+    </ul>
+</div>
+
+    </nav>
+</header>
+
+    <div class="container-xxl bd-gutter mt-3 my-md-4 bd-layout">
+    <aside class="bd-sidebar scrollBar">
+        <div class="offcanvas-lg offcanvas-start" tabindex="-1" id="bdSidebar" aria-labelledby="bdSidebarOffcanvasLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title" id="bdSidebarOffcanvasLabel">학습목차</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" data-bs-target="#bdSidebar"></button>
+        </div>
+
+        <div class="offcanvas-body">
+            <!-- 네비게이션 -->
+            <nav class="bd-links w-100 " id="bd-docs-nav" aria-label="Docs navigation">
+	<ul class="bd-links-nav list-unstyled mb-0 pb-3 pb-md-2 pe-lg-2 ">
+
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        CSS
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">스타일시트</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">선택자</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">텍스트</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">색상 및 배경</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">목록 및 테이블</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">이미지 및 미디어</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">레이아웃 스타일</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">플렉스와 그리드</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">변형 및 에니메이션</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">반응형 웹</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">프레임워크</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">SASS/LESS</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">부트스트랩</a>
+        </li>
+        <li>
+          <a href="/" class="bd-links-link d-inline-block rounded">테일윈드</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        HTML
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+        <li>
+          <a href="https://html.jiny.dev/setup" class="bd-links-link d-inline-block rounded">개발환경</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/html" class="bd-links-link d-inline-block rounded">문서와 요소</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/basic" class="bd-links-link d-inline-block rounded">기초</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/tag" class="bd-links-link d-inline-block rounded">테그</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/layout" class="bd-links-link d-inline-block rounded">레이아웃</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/semantic" class="bd-links-link d-inline-block rounded">시맨틱</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/multimedia" class="bd-links-link d-inline-block rounded">미디어</a>
+        </li>
+        <li>
+          <a href="https://html.jiny.dev/form" class="bd-links-link d-inline-block rounded">폼</a>
+        </li>
+      </ul>
+    </li>
+
+
+
+    <li class="bd-links-group py-2">
+      <strong class="bd-links-heading d-flex w-100 align-items-center fw-semibold">
+        Javascript
+      </strong>
+      <ul class="list-unstyled fw-normal pb-2 small">
+      </ul>
+    </li>
+
+
+
+
+
+
+
+    
+	</ul>
+</nav>
+        </div>
+        </div>
+    </aside>
+
+    <main class="bd-main order-1">
+    <div class="bd-content ps-lg-2">
+    <h1 id="웹-디자인을-위한-css">웹 디자인을 위한 CSS</h1>
 <p>표준 웹사이트 제작을 위한 <code class="language-plaintext highlighter-rouge">스타일시트</code>를 학습합니다. CSS는 HTML문서를 보기 좋게 꾸며주는 역할을 수행합니다.
 따라서 요즘에는 HTML과 CSS를 한세트로 같이 학습을 해야 합니다.</p>
 
-<h2 id="스타일시트-기초"><a href="base">스타일시트 기초</a></h2>
+<h2 id="01-스타일시트-기초">01. <a href="base">스타일시트 기초</a></h2>
 <p>스타일 시트는 html 요소의 <code class="language-plaintext highlighter-rouge">style</code> 속성값을 변경하여 <code class="language-plaintext highlighter-rouge">요소</code>를 디자인하는 기능입니다.</p>
 
 <ul>
@@ -101,7 +326,7 @@
   <li>스타일시트 <a href="/base/priority">우선순위</a></li>
 </ul>
 
-<h2 id="선택자">선택자</h2>
+<h2 id="02-선택자">02. 선택자</h2>
 <p>CSS는 HTML의 요소를 꾸며주는 역할을 수행합니다. 요소를 꾸며주기 위해서는 먼저 요소를 선택해 주어야 합니다. CSS는 요소를 선택할 수 있는 다양한 방법들을 제공합니다.</p>
 
 <ul>
@@ -113,7 +338,7 @@
 https://www.w3.org/TR/CSS/</p>
 </blockquote>
 
-<h3 id="속성-선택자"><a href="selector/attr">속성 선택자</a></h3>
+<h3 id="02-1속성-선택자">02-1.<a href="selector/attr">속성 선택자</a></h3>
 <p>특정 속성을 가진 HTML 태그를 선택할수 있습니다. 속성 선택자는 기본 속성 선택자와 문자열 속성 선택자로 구분됩니다.</p>
 
 <ul>
@@ -123,16 +348,16 @@ https://www.w3.org/TR/CSS/</p>
 
 <p>기본 속성 선택지는 많이 시용하지만 문자열 속성 선택자는 특별한 경우에만 사용합니다.</p>
 
-<h3 id="가상-선택자"><a href="/selector/pseudo">가상 선택자</a></h3>
+<h3 id="02-2가상-선택자">02-2.<a href="/selector/pseudo">가상 선택자</a></h3>
 <p>구조나 부정 선택자 처럼 <code class="language-plaintext highlighter-rouge">:</code>기호를 사용하는 선택자를 가상 클래스 선택자라도 합니다.</p>
 <blockquote>
   <p>구조 선택자는 CSS3부터 지원하는 선택자입니다.</p>
 </blockquote>
 
-<h3 id="가상-요소-선택자"><a href="/selector/pelement">가상 요소 선택자</a></h3>
+<h3 id="02-3가상-요소-선택자">02-3.<a href="/selector/pelement">가상 요소 선택자</a></h3>
 <p><code class="language-plaintext highlighter-rouge">::</code> 기호를 사용하는 선택자를 가상 요소 선택자라고 합니다.</p>
 
-<h3 id="속성-및-값의-종류">속성 및 값의 종류</h3>
+<h3 id="02-4속성-및-값의-종류">02-4.속성 및 값의 종류</h3>
 <p>CSS는 UI를 꾸미기 위하여 다양한 속성값들이 존재 합니다.</p>
 
 <ul>
@@ -143,7 +368,7 @@ https://www.w3.org/TR/CSS/</p>
   <li><a href="attr">속성의 종류</a></li>
 </ul>
 
-<h3 id="초기화">초기화</h3>
+<h3 id="02-5초기화">02-5.초기화</h3>
 <p>각각의 브라우저는 자체적으로 HTML 문서를 출력하기 위한 기본 CSS들이 존재합니다. 동일한 HTML을 여러 종류의 브라우저로 확인해 보면 서로 다른 결과물로 출력됩니다. 이러한 부분을 제거하고자 기본적인 브라우저의 CSS값을 초기화 하여 재설정 합니다.</p>
 
 <ul>
@@ -155,12 +380,14 @@ https://www.w3.org/TR/CSS/</p>
   </li>
 </ul>
 
-<h3 id="벤더-프리픽스">벤더-프리픽스</h3>
+<h3 id="02-6브라우저-적용">02-6.브라우저 적용</h3>
+<p>CSS의 공급업체 접두사는 초기 사용 및 피드백을 허용하기 위해 실험적인 CSS 기능에 추가된 브라우저별 접두사입니다.</p>
 <ul>
   <li><a href="/attr/prefix">벤더-프리픽스</a></li>
 </ul>
 
-<h2 id="텍스트-스타일"><a href="/attr/text">텍스트 스타일</a></h2>
+<h2 id="03-텍스트-스타일">03. <a href="/attr/text">텍스트 스타일</a></h2>
+<p>CSS로 텍스트를 장식하면 디자인 유연성, 가독성, 접근성 및 콘텐츠의 SEO 최적화가 향상됩니다.</p>
 
 <ul>
   <li>글꼴 스타일</li>
@@ -170,7 +397,8 @@ https://www.w3.org/TR/CSS/</p>
   <li><a href="/attr/webfont">웹폰트</a></li>
 </ul>
 
-<h2 id="색상-및-배경-스타일">색상 및 배경 스타일</h2>
+<h2 id="04-색상-및-배경-스타일">04. 색상 및 배경 스타일</h2>
+<p>CSS를 통해 색상과 배경을 설정하면 디자인의 유연성, 일관성 및 접근성이 향상될 뿐만 아니라 로드 시간이 빨라지고 콘텐츠에서 프레젠테이션이 분리됩니다.</p>
 
 <ul>
   <li>색상</li>
@@ -179,7 +407,11 @@ https://www.w3.org/TR/CSS/</p>
   <li><a href="/attr/shadow">그림자</a></li>
 </ul>
 
-<h2 id="목록-및-테이블">목록 및 테이블</h2>
+<h2 id="05-목록-및-테이블">05. 목록 및 테이블</h2>
+<blockquote>
+  <p>ul에서 데이터를 출력하는 것과 HTML에서 테이블을 출력하는 것의 차이점은 ul이 정렬되지 않은 가변 길이 목록에 더 적합한 반면 table은 여러 열과 행이 있는 정렬되고 구조화된 데이터에 더 적합하다는 것입니다.</p>
+</blockquote>
+
 <ul>
   <li>
     <p>목록</p>
@@ -189,14 +421,16 @@ https://www.w3.org/TR/CSS/</p>
   </li>
 </ul>
 
-<h2 id="이미지">이미지</h2>
+<h2 id="06-이미지-및-미디어">06. 이미지 및 미디어</h2>
 <p>CSS를 이용하여 이미지 출력을 관리 하는 방법에 대해서 학습합니다.</p>
 <ul>
   <li><a href="/image/">스프라이트 이미지</a></li>
+  <li>미디어</li>
 </ul>
 
-<h2 id="레이아웃-스타일">레이아웃 스타일</h2>
-<p>사이트 레이아웃을 구현할 수 있는 다양한 기술에 대해서 알아 보도록 합니다.</p>
+<h2 id="07-레이아웃-스타일">07. 레이아웃 스타일</h2>
+<p>웹 사이트에서 CSS를 통해 레이아웃을 디자인한다는 것은 HTML 요소의 위치, 크기 및 간격을 정의하여 콘텐츠에 대해 체계적이고 시각적으로 매력적인 구조를 만드는 것을 의미합니다.<br />
+사이트 레이아웃을 구현할 수 있는 다양한 기술에 대해서 알아 보도록 합니다.</p>
 
 <ul>
   <li>
@@ -221,23 +455,37 @@ https://www.w3.org/TR/CSS/</p>
       <li>overflow 속성</li>
     </ul>
   </li>
-  <li><a href="/layout/flex">플랙스박스</a></li>
-  <li><a href="/layout/grid">그리드</a></li>
 </ul>
 
-<h2 id="변형-및-에니메이션-스타일">변형 및 에니메이션 스타일</h2>
+<h2 id="08-플렉스와-그리드-레이아웃">08. 플렉스와 그리드 레이아웃</h2>
+<p>CSS의 flex 및 grid와 같은 레이아웃은 추가 마크업이나 복잡한 계산 없이 더 나은 콘텐츠 배치와 반응형 디자인을 허용하기 때문에 기존 방법보다 더 효율적이고 유연합니다.</p>
+
+<h3 id="플랙스박스"><a href="/layout/flex">플랙스박스</a></h3>
+<p>Flexbox는 컨테이너의 요소 간에 공간을 정렬하고 분배하는 유연하고 효율적인 방법을 제공하는 CSS의 레이아웃 모듈입니다.</p>
+
+<h3 id="그리드"><a href="/layout/grid">그리드</a></h3>
+<p>CSS 그리드 레이아웃은 flexbox보다 더 복잡한 레이아웃과 콘텐츠 배치를 허용하는 강력한 2차원 그리드 시스템으로, 웹 페이지에 고도로 사용자 정의 가능한 디자인을 제공합니다.</p>
+
+<h2 id="09-변형-및-에니메이션-스타일">09. 변형 및 에니메이션 스타일</h2>
 <p>요소를 옮기거나 크기를 조절하고 회전시키는 등 변형 작업</p>
 
 <ul>
-  <li><a href="/trans/transform">변형</a></li>
   <li>
-    <p><a href="/trans/transition">트랜지션</a></p>
+    <p><a href="/trans/transform">변형</a><br />
+CSS에서 변환은 2D 또는 3D 공간에서 요소를 회전, 크기 조정, 기울이기 또는 변환할 수 있는 일련의 CSS 속성을 나타냅니다.</p>
   </li>
-  <li><a href="/trans/animation">에니메이션</a></li>
+  <li>
+    <p><a href="/trans/transition">트랜지션</a><br />
+CSS에서 전환은 요소의 서로 다른 스타일 간에 부드럽고 점진적인 애니메이션을 만들 수 있게 해주는 속성입니다.</p>
+  </li>
+  <li>
+    <p><a href="/trans/animation">에니메이션</a><br />
+CSS에서 애니메이션은 애니메이션의 키프레임과 기간, 타이밍 및 반복을 정의하여 보다 복잡하고 동적인 애니메이션을 만들 수 있게 해주는 속성을 말합니다.</p>
+  </li>
 </ul>
 
-<h2 id="반응형-웹">반응형 웹</h2>
-<p>반응형 웹사이트는 <code class="language-plaintext highlighter-rouge">화면크기</code>에 따라 최적화 하여 내용을 출력하는 것을 말합니다.</p>
+<h2 id="10-반응형-웹">10. 반응형 웹</h2>
+<p>반응형 웹사이트는 레이아웃과 콘텐츠를 <code class="language-plaintext highlighter-rouge">다양한 화면 크</code>기와 <code class="language-plaintext highlighter-rouge">장치</code>에 맞게 조정하도록 설계된 웹사이트입니다.</p>
 
 <ul>
   <li>
@@ -247,17 +495,20 @@ https://www.w3.org/TR/CSS/</p>
   <li><a href="/response/media">미디어쿼리</a></li>
 </ul>
 
-<h2 id="css-라이브러리-및-프레임워크">CSS 라이브러리 및 프레임워크</h2>
-<p>CSS 프레임워크란 무엇인지에 대해서 간략히 알아 보도록 합니다.</p>
+<h2 id="11-css-라이브러리-및-프레임워크">11. CSS 라이브러리 및 프레임워크</h2>
+<p>CSS 프레임워크란 무엇인지에 대해서 간략히 알아 보도록 합니다. 
+부트스트랩과 같은 CSS 프레임워크는 반응형 웹 인터페이스 구축 프로세스를 단순화하는 미리 디자인된 CSS 및 JavaScript 구성 요소 모음입니다.</p>
 
-<h2 id="sassless">SASS/LESS</h2>
+<h2 id="12sassless">12.SASS/LESS</h2>
+<p>SASS 및 LESS는 변수, 믹스인, 함수 및 기타 기능을 제공하여 CSS의 기능을 확장하는 전처리기 스크립팅 언어입니다.</p>
 <ul>
   <li><a href="/scss">Sass란</a></li>
   <li><a href="/scss/bundler">번들러</a></li>
   <li>Nodejs 와 번들러 및 설치</li>
 </ul>
 
-<h2 id="부트스트랩">부트스트랩</h2>
+<h2 id="13-부트스트랩">13. 부트스트랩</h2>
+<p>Bootstrap CSS는 반응형 웹 디자인을 위해 미리 디자인된 CSS 및 JavaScript 구성 요소를 제공하는 널리 사용되는 프런트 엔드 프레임워크입니다.</p>
 <ul>
   <li><a href="/bootstrap">부트스트랩</a></li>
   <li>부트스트랩 버젼</li>
@@ -266,15 +517,91 @@ https://www.w3.org/TR/CSS/</p>
   <li><a href="/bootstrap/component">컴포넌트</a></li>
 </ul>
 
-<h2 id="테일윈드">테일윈드</h2>
+<h2 id="14-테일윈드">14. 테일윈드</h2>
+<p>Tailwind CSS는 사용자 지정 사용자 인터페이스를 신속하게 구축하기 위해 미리 정의된 클래스를 제공하는 유틸리티 우선 CSS 프레임워크입니다.</p>
 <ul>
   <li><a href="/tailwind">테일윈드</a></li>
 </ul>
 
 
-    </div>    
+    <div>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3321560028329475"
+       crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-format="fluid"
+            data-ad-layout-key="-fb+5w+4e-db+86"
+            data-ad-client="ca-pub-3321560028329475"
+            data-ad-slot="6043271504"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>  
+</div>
+
+    
+
+
+
+    </main>
+</div>
+
+    <footer class="bd-footer py-4 py-md-5 mt-5 bg-body-tertiary">
+    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+
+      <div class="row">
+
+        <div class="col-lg-3 mb-3">
+          <a class="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/" >
+
+            <span class="fs-5">JinyDev</span>
+          </a>
+          <ul class="list-unstyled small">
+            <li class="mb-2">지니와 함께 다양한 ICT 기술을 학습합니다.</li>
+            <li class="mb-2">Code licensed MIT</li>
+            <li class="mb-2">Currently v0.0.1</li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+          <h5>FrontEnd</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://html.jiny.dev">HTML</a></li>
+            <li class="mb-2"><a href="https://css.jiny.dev">CSS</a></li>
+            
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Language</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://php.jiny.dev">PHP</a></li>
+            <li class="mb-2"><a href="https://javascript.jiny.dev">Javascript</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>DevOps</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://linux.jiny.dev">Linux</a></li>
+            <li class="mb-2"><a href="https://window.jiny.dev">Windows</a></li>
+            <li class="mb-2"><a href="/">Mac</a></li>
+          </ul>
+
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://git.jiny.dev">Git</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2 mb-3">
+          <h5>Hardware</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="https://arduino.jiny.dev">Arduino</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
-</body>
+  </body>
 </html>

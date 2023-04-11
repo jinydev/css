@@ -93,6 +93,18 @@ layout: home
 * [rem 단위](/response/fluid)
 
 
+## 화면 방향 전환
+요즘 모바일기기들은 세로형 보기모드와 가로형 보기 모드를 지원합니다. CSS에서도 media를 감지하여 이를 구분한 CSS를 적용할 수 있습니다.
+
+```css
+@media screen and (orientation: portait) {
+
+}
+
+@media screen and (orientation: landscape) {
+
+}
+```
 
 
 
